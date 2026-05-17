@@ -1,12 +1,22 @@
-node_modules/
+# 1. Ignorar TUDO no nível principal do repositório
+/*
+
+# 2. Exceções (Pastas e Arquivos que SERÃO comitados)
+!/.gitignore
+!/docs/
+!/scripts/
+!/data/
+
+# 3. Dentro da pasta data, ignorar tudo por padrão
+/data/*
+
+# 4. Exceções dentro de data (Pastas que SERÃO comitadas)
+!/data/landing/
+!/data/gold/
+
+# 5. Segurança extra: Garantir exclusão de lixo de sistema/IDE e credenciais
 __pycache__/
+*.pyc
 .env
-*.zip
-*.xlsx
-data/temp_extract/
-data/bronze/
-data/silver/
-data/gold/
-data_dump/
-data/*.csv
-.antigravity/context.md
+.antigravity/
+.DS_Store
