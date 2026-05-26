@@ -1,33 +1,39 @@
 import pandas as pd
-import os
+from pathlib import Path
 
 def analyze_excel(file_path):
-    print(f"--- Analyzing Excel: {file_path} ---")
+    print(f"\n--- Analyzing Excel: {file_path} ---")
+    if not file_path.exists():
+        print(f"⚠️ Warning: Excel file not found: {file_path}")
+        return
     try:
         xls = pd.ExcelFile(file_path)
         print(f"Sheet names: {xls.sheet_names}")
         for sheet in xls.sheet_names:
             df = pd.read_excel(file_path, sheet_name=sheet)
             print(f"\nSheet: {sheet}")
-            print(f"Columns: {df.columns.tolist()}")
+            print(f"Columns: {df.columns.tolist()[:10]}...")
             print(f"Shape: {df.shape}")
-            print(df.head())
+            print(df.head(2))
     except Exception as e:
         print(f"Error reading Excel: {e}")
 
 def analyze_csv(file_path):
     print(f"\n--- Analyzing CSV: {file_path} ---")
+    if not file_path.exists():
+        print(f"⚠️ Warning: CSV file not found: {file_path}")
+        return
     try:
         df = pd.read_csv(file_path)
-        print(f"Columns: {df.columns.tolist()}")
+        print(f"Columns: {df.columns.tolist()[:10]}...")
         print(f"Shape: {df.shape}")
-        print(df.head())
+        print(df.head(2))
     except Exception as e:
         print(f"Error reading CSV: {e}")
 
-excel_path = r'c:\Users\joaof\Downloads\Unifacs\analise_dados_big_data\a3\dataset\data\gold\Book1.xlsx'
-base_consolidada_path = r'c:\Users\joaof\Downloads\Unifacs\analise_dados_big_data\a3\dataset\data\gold\base_consolidada.csv'
-base_snis_geografia_path = r'c:\Users\joaof\Downloads\Unifacs\analise_dados_big_data\a3\dataset\data\gold\base_snis_geografia.csv'
+excel_path = Path('data_dump/Book1.xlsx')
+base_consolidada_path = Path('data/gold/base_consolidada_2022.csv')
+base_snis_geografia_path = Path('data/gold/base_snis_geografia.csv')
 
 analyze_excel(excel_path)
 analyze_csv(base_consolidada_path)

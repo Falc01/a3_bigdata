@@ -16,28 +16,35 @@ def auto_eda(df):
         'Tipo': df.dtypes,
         'Nulos (%)': (df.isnull().sum() / len(df) * 100).round(2)
     })
-    print(info_df)
+    print(info_df.head(20)) # Print first 20 columns for brevity
+    if len(info_df) > 20:
+        print(f"... and {len(info_df) - 20} more columns.")
     
     print("\n[DESCRIBE] Estatisticas Descritivas:")
     print(df.describe().round(2))
     
-    print("\n[CORRELATION] Matriz de Correlacao (Saneamento vs Saude):")
+    print("\n[CORRELATION] Matriz de Correlacao (Saude vs Saneamento Municipal):")
     cols_interesse = [
-        'vl_indicador_calculado_uf_agua',
-        'vl_indicador_calculado_uf_lixo',
-        'vl_indicador_calculado_uf_sani',
-        'vl_indicador_saude_infantil',
-        'indice_saneamento_consolidado'
+        'nascidos_vivos',
+        'obitos_infantis',
+        'taxa_mortalidade_infantil',
+        'populacao_ibge_2022',
+        'tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total'
     ]
-    corr = df[cols_interesse].corr().round(4)
-    print(corr)
+    # Filtra colunas que realmente existem no DataFrame para evitar erros
+    cols_existentes = [c for c in cols_interesse if c in df.columns]
+    if len(cols_existentes) > 1:
+        corr = df[cols_existentes].corr().round(4)
+        print(corr)
+    else:
+        print("Aviso: Menos de duas colunas de interesse encontradas para correlação.")
     
-    return corr
+    return None
 
 def validar_base():
-    gold_path = Path("data/gold/base_consolidada.csv")
+    gold_path = Path("data/gold/base_consolidada_municipal_2022.csv")
     if not gold_path.exists():
-        print("[ERRO] Base Gold nao encontrada!")
+        print(f"[ERRO] Base Gold nao encontrada em: {gold_path}!")
         return
         
     df = pd.read_csv(gold_path)

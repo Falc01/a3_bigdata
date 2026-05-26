@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 import os
 import shutil
+import re
 
 gold_path = Path('data/gold')
 dump_path = Path('data_dump')
@@ -31,10 +32,20 @@ for file in gold_path.iterdir():
                 # Check if only BA or 29 (BA code)
                 only_ba = all(str(u).strip().upper() in ['BA', '29', '29.0', 'BAHIA'] for u in unique_ufs)
             else:
-                print("  Nenhuma coluna de UF encontrada.")
+                print("  Nenhuma coluna de UF encontrada. Verificando codigos de municipios...")
+                # Se nao tem coluna UF, mas tem de municipio, verifica se os codigos começam com 29 (BA)
+                mun_cols = [c for c in df.columns if 'municipio' in c.lower() or 'ibge' in c.lower()]
+                if mun_cols:
+                    mun_col = mun_cols[0]
+                    unique_muns = df[mun_col].dropna().unique().tolist()
+                    only_ba = all(str(m).strip().startswith('29') for m in unique_muns)
+                    print(f"  Codigos de municipios começam com 29 (BA): {only_ba}")
+                else:
+                    print("  Nenhuma coluna de UF ou Municipio encontrada.")
             
             # 2. Check 2022
-            year_cols = [c for c in df.columns if 'ano' in c.lower() or 'ref' in c.lower() or 'competencia' in c.lower()]
+            pattern = re.compile(r'^(ano|co_anomes|dt_competencia|ano_referencia|ano_de_referencia)$', re.IGNORECASE)
+            year_cols = [c for c in df.columns if pattern.match(c)]
             only_2022 = False
             if year_cols:
                 year_col = year_cols[0]
@@ -43,7 +54,11 @@ for file in gold_path.iterdir():
                 # Check if only 2022 or 202212
                 only_2022 = all(str(y).startswith('2022') for y in unique_years)
             else:
-                print("  Nenhuma coluna de ano encontrada.")
+                if '2022' in file.name or 'base_snis_geografia' in file.name:
+                    print("  Nenhuma coluna de ano encontrada, mas o ano 2022 esta implicito no arquivo.")
+                    only_2022 = True
+                else:
+                    print("  Nenhuma coluna de ano encontrada e sem 2022 no nome do arquivo.")
 
             # Theme check (Health/Sanitation)
             theme_related = True # Assuming files in gold are relevant

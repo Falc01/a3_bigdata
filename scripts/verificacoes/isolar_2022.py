@@ -1,11 +1,18 @@
 import pandas as pd
 from pathlib import Path
+import sys
 
 # Paths
 input_file = Path('data/gold/base_consolidada.csv')
 output_file = Path('data/gold/base_consolidada_2022.csv')
 
 print(f"Lendo o arquivo: {input_file}")
+if not input_file.exists():
+    print(f"❌ Erro: O arquivo de entrada '{input_file}' não foi encontrado.")
+    print("💡 Por favor, execute o script de consolidação primeiro para gerá-lo:")
+    print("   python scripts/pipeline/consolidar_base.py")
+    sys.exit(1)
+
 df = pd.read_csv(input_file)
 
 # The column is co_anomes, let's filter for anything starting with 2022

@@ -1,6 +1,18 @@
 import pandas as pd
+from pathlib import Path
+import sys
 
-excel_path = r'c:\Users\joaof\Downloads\Unifacs\analise_dados_big_data\a3\dataset\data\gold\Book1.xlsx'
+excel_path = Path('data_dump/Book1.xlsx')
+base_consolidada_path = Path('data/gold/base_consolidada_2022.csv')
+
+if not excel_path.exists():
+    print(f"❌ Erro: O arquivo de Excel '{excel_path}' não foi encontrado.")
+    sys.exit(1)
+
+if not base_consolidada_path.exists():
+    print(f"❌ Erro: O arquivo de dados consolidado '{base_consolidada_path}' não foi encontrado.")
+    sys.exit(1)
+
 df_excel = pd.read_excel(excel_path)
 
 # Cleanup excel data
@@ -13,15 +25,23 @@ print(f"Excel Total Births: {total_births}")
 print(f"Excel Total Deaths: {total_deaths}")
 print(f"Excel Calculated Rate (Total): {total_rate:.2f}")
 
-base_consolidada_path = r'c:\Users\joaof\Downloads\Unifacs\analise_dados_big_data\a3\dataset\data\gold\base_consolidada.csv'
 df_base = pd.read_csv(base_consolidada_path)
-ba_2023 = df_base[(df_base['sg_uf'] == 'BA') & (df_base['co_anomes'] == 202312)]
 
-if not ba_2023.empty:
-    print(f"Base Consolidada BA 2023 Indicator: {ba_2023['vl_indicador_saude_infantil'].values[0]}")
+# Descobrir a coluna de saúde disponível
+saude_col = 'tx_causas_mal_definidas' if 'tx_causas_mal_definidas' in df_base.columns else (
+    'vl_indicador_saude_infantil' if 'vl_indicador_saude_infantil' in df_base.columns else df_base.columns[-2]
+)
+
+ba_2022 = df_base[(df_base['sg_uf'] == 'BA') & (df_base['co_anomes'] == 202212)]
+
+if not ba_2022.empty:
+    print(f"Base Consolidada BA 2022 Indicator ({saude_col}): {ba_2022[saude_col].values[0]}")
 else:
-    print("BA 2023 not found in base_consolidada.csv")
+    print("BA 2022 not found in base_consolidada_2022.csv")
 
-# Let's check other UFs for 2023 to see if they follow the same pattern
-print("\n--- 2023 Indicators for all UFs ---")
-print(df_base[df_base['co_anomes'] == 202312][['sg_uf', 'vl_indicador_saude_infantil']])
+# Let's check other UFs for 2022 if they exist in this file
+print("\n--- 2022 Indicators for all UFs in base ---")
+if 'sg_uf' in df_base.columns and saude_col in df_base.columns:
+    print(df_base[df_base['co_anomes'] == 202212][['sg_uf', saude_col]])
+else:
+    print("Columns sg_uf or saude_col not found.")
