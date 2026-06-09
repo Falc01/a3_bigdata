@@ -25,9 +25,9 @@ def extrair_bronze():
 
     print(f"--- Iniciando extracao para Camada Bronze ---")
 
-    # 1. Descompactar arquivos ZIP de 'data' e 'data_dump' (incluindo aninhados)
+    # 1. Descompactar arquivos ZIP de 'data' (recursivo) e 'data_dump' (incluindo aninhados)
     processed_zips = set()
-    zips_to_process = list(data_path.glob("*.zip")) + list(dump_path.glob("*.zip"))
+    zips_to_process = list(data_path.rglob("*.zip")) + list(dump_path.glob("*.zip"))
     
     while zips_to_process:
         zip_file = zips_to_process.pop(0)
@@ -59,7 +59,7 @@ def extrair_bronze():
 
     # 3. Mapear arquivos CSV, JSON e XLSX (Deduplicação)
     for source in [data_path, dump_path, temp_extract_path]:
-        for ext in ["**/*.csv", "**/*.json", "**/*.xlsx"]:
+        for ext in ["**/*.csv", "**/*.json", "**/*.xlsx", "**/*.xls"]:
             for file in source.rglob(ext):
                 if bronze_path in file.parents or excel_path in file.parents:
                     continue

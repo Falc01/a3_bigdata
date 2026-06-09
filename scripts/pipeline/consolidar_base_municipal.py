@@ -23,12 +23,18 @@ def consolidar_municipal():
     df_mort['co_municipio'] = pd.to_numeric(df_mort['co_municipio'], errors='coerce')
     df_snis['co_municipio'] = pd.to_numeric(df_snis['co_municipio'], errors='coerce')
     
+    # Garantir tipagem numerica e consistencia para co_uf e sg_uf
+    df_mort['co_uf'] = pd.to_numeric(df_mort['co_uf'], errors='coerce')
+    df_snis['co_uf'] = pd.to_numeric(df_snis['co_uf'], errors='coerce')
+    df_mort['sg_uf'] = df_mort['sg_uf'].astype(str).str.strip()
+    df_snis['sg_uf'] = df_snis['sg_uf'].astype(str).str.strip()
+    
     # Remover no_municipio do SNIS para nao duplicar e manter o limpo da mortalidade
     if 'no_municipio' in df_snis.columns:
         df_snis = df_snis.drop(columns=['no_municipio'])
         
-    # Merge inner
-    df_consolidada = pd.merge(df_mort, df_snis, on='co_municipio', how='inner')
+    # Merge inner usando chaves comuns para evitar colunas duplicadas (_x, _y)
+    df_consolidada = pd.merge(df_mort, df_snis, on=['co_municipio', 'co_uf', 'sg_uf'], how='inner')
     
     # Salvar base consolidada municipal
     df_consolidada.to_csv(output_file, index=False)

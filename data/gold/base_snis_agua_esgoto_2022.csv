@@ -1,0 +1,406 @@
+co_uf,sg_uf,co_municipio,tx_atendimento_total_agua,tx_atendimento_urbano_agua,tx_atendimento_urbano_esgoto,tx_coleta_esgoto,tx_tratamento_esgoto,consumo_per_capita_agua,idx_conformidade_coliformes,no_prestador_servico_ae
+29,BA,290010,99.85,0.0,0.0,88.89,0.0,67.65,100.0,Prefeitura Municipal de Abaíra
+29,BA,290020,60.23,0.0,0.0,49.86,100.0,95.91,112.5,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290030,87.11,0.0,0.0,0.0,0.0,98.29,137.72,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290035,72.97,0.0,0.0,0.0,0.0,97.35,89.94,Prefeitura Municipal de Adustina
+29,BA,290040,36.56,0.0,0.0,0.0,0.0,155.7,95.83,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290050,73.44,0.0,0.0,0.0,0.0,149.32,109.49,Serviço Autônomo de Água e Esgoto
+29,BA,290060,58.24,0.0,0.0,0.0,0.0,103.22,139.1,Prefeitura Municipal de Aiquara
+29,BA,290070,97.26,0.0,0.0,38.85,69.48,106.47,123.63,Serviço Autônomo de Água e Esgoto
+29,BA,290080,51.58,0.0,0.0,0.0,0.0,118.03,110.53,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290090,79.78,0.0,0.0,0.0,0.0,129.46,121.76,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290100,72.5,0.0,0.0,2.35,100.0,119.32,105.56,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290110,82.41,0.0,0.0,0.0,0.0,91.46,90.24,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290115,80.04,0.0,0.0,0.0,0.0,109.97,126.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290120,18.99,0.0,0.0,0.0,0.0,155.32,129.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290130,55.52,0.0,0.0,0.0,0.0,101.54,123.39,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290135,53.26,0.0,0.0,0.0,0.0,131.59,141.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290140,46.03,0.0,0.0,0.0,0.0,182.27,91.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290150,59.39,0.0,0.0,0.0,0.0,111.86,108.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290160,53.02,0.0,0.0,0.0,0.0,95.76,146.53,Prefeitura Municipal de Antas
+29,BA,290170,35.39,0.0,0.0,0.0,0.0,157.33,111.56,Prefeitura Municipal de Antonio Cardoso
+29,BA,290180,71.64,0.0,0.0,0.0,0.0,104.06,105.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290190,64.99,0.0,0.0,0.0,0.0,137.49,131.06,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290195,68.52,0.0,0.0,0.0,0.0,107.5,125.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290200,32.13,0.0,0.0,0.0,0.0,158.71,114.35,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290210,69.62,0.0,0.0,1.53,100.0,83.43,123.68,Prefeitura Municipal de Araci
+29,BA,290220,49.6,0.0,0.0,0.0,0.0,112.58,117.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290225,53.77,0.0,0.0,0.0,0.0,76.63,92.36,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290230,61.74,0.0,0.0,0.0,0.0,87.24,109.72,Prefeitura Municipal de Aratuípe
+29,BA,290240,83.84,0.0,0.0,0.0,0.0,108.23,101.52,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290250,26.88,0.0,0.0,0.0,0.0,128.98,87.5,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290260,56.83,0.0,0.0,27.43,100.0,114.25,150.69,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290265,34.22,0.0,0.0,0.0,0.0,111.48,158.93,Prefeitura Municipal de Banzaê
+29,BA,290270,78.29,0.0,0.0,90.0,100.0,273.97,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290280,71.85,0.0,0.0,98.87,0.0,122.48,141.67,Prefeitura Municipal de Barra da Estiva
+29,BA,290290,72.72,0.0,0.0,1.2,100.0,113.4,123.19,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290300,65.04,0.0,0.0,0.0,0.0,116.48,119.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290310,60.03,0.0,0.0,0.0,0.0,109.38,164.74,Prefeitura Municipal de Barra do Rocha
+29,BA,290320,95.73,0.0,0.0,69.71,100.0,133.71,96.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290323,51.26,0.0,0.0,0.0,0.0,114.56,119.89,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290327,100.0,0.0,0.0,0.0,0.0,88.64,97.22,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290340,73.98,0.0,0.0,100.0,100.0,69.78,124.07,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290350,56.35,0.0,0.0,0.0,0.0,66.78,166.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290360,32.11,0.0,0.0,0.0,0.0,141.35,155.56,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290370,37.57,0.0,0.0,0.0,0.0,119.23,140.83,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290380,61.03,0.0,0.0,0.0,0.0,102.99,100.98,Prefeitura Municipal de Boa Vista do Tupim
+29,BA,290390,100.0,0.0,0.0,35.87,68.9,99.17,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290395,29.29,0.0,0.0,0.0,0.0,150.23,89.49,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290400,33.64,0.0,0.0,0.0,0.0,111.12,131.55,Central - Sistemas de Saneamento de Seabra
+29,BA,290405,56.56,0.0,0.0,0.0,0.0,75.41,114.47,Central - Sistemas de Saneamento de Seabra
+29,BA,290410,21.6,0.0,0.0,0.0,0.0,164.78,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290420,53.47,0.0,0.0,43.93,100.0,139.23,136.57,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290430,72.41,0.0,0.0,0.0,0.0,96.45,106.94,Prefeitura Municipal de Brejões
+29,BA,290440,27.18,0.0,0.0,0.0,0.0,128.78,117.95,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290450,29.09,0.0,0.0,0.0,0.0,120.16,66.2,Prefeitura Municipal de Brotas de Macaubas
+29,BA,290460,79.74,0.0,0.0,6.28,100.0,131.61,99.2,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290470,81.98,0.0,0.0,0.0,0.0,98.41,118.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290475,51.05,0.0,0.0,0.0,0.0,116.93,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290480,47.2,0.0,0.0,0.0,0.0,162.15,121.76,Prefeitura Municipal de Caatiba
+29,BA,290485,73.54,0.0,0.0,4.31,100.0,96.45,106.97,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290490,80.75,0.0,0.0,59.3,100.0,92.94,105.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290500,60.83,0.0,0.0,0.0,20.69,159.5,111.9,Prefeitura Municipal de Caculé
+29,BA,290510,75.09,0.0,0.0,5.22,100.0,108.55,106.48,Central - Sistemas de Saneamento de Jacobina
+29,BA,290515,24.13,0.0,0.0,0.0,0.0,94.49,163.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290520,59.82,0.0,0.0,0.0,0.0,131.96,108.78,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290530,63.28,0.0,0.0,0.0,0.0,108.13,127.54,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290540,84.91,0.0,0.0,26.82,100.0,148.36,101.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290550,48.44,0.0,0.0,0.0,0.0,129.82,155.09,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290560,77.44,0.0,0.0,41.5,100.0,95.66,98.48,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290570,95.54,0.0,0.0,41.7,61.42,148.9,126.02,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290580,55.97,0.0,0.0,11.03,100.0,100.07,124.8,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290590,37.66,0.0,0.0,0.0,0.0,107.38,111.57,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290600,49.83,0.0,0.0,4.89,100.0,93.92,101.0,Central - Sistemas de Saneamento de Jacobina
+29,BA,290610,50.16,0.0,0.0,37.66,100.0,146.72,118.52,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290620,82.87,0.0,0.0,0.0,0.0,110.4,114.81,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290630,77.09,0.0,0.0,69.95,100.0,88.57,106.36,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290640,64.9,0.0,0.0,0.0,0.0,116.93,113.44,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290650,90.76,0.0,0.0,42.54,100.0,115.66,124.89,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290660,62.89,0.0,0.0,0.0,0.0,142.89,111.51,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290670,76.73,0.0,0.0,0.0,0.0,109.02,123.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290680,67.64,0.0,0.0,0.0,0.0,97.25,114.35,Prefeitura Municipal de Cansanção
+29,BA,290682,55.29,0.0,0.0,0.0,0.0,112.29,37.21,Prefeitura Municipal de Canudos
+29,BA,290685,67.9,0.0,0.0,0.0,0.0,116.82,106.25,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290687,96.35,0.0,0.0,4.09,100.0,104.07,96.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290689,24.59,0.0,0.0,0.0,0.0,165.65,160.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290690,68.53,0.0,0.0,38.57,100.0,96.63,115.44,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290700,86.23,0.0,0.0,0.0,0.0,85.61,85.42,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290710,100.0,0.0,0.0,28.76,100.0,253.75,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290720,90.45,0.0,0.0,58.82,0.0,33.68,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290730,85.18,0.0,0.0,3.35,100.0,104.74,115.28,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290740,76.24,0.0,0.0,0.0,0.0,120.46,118.59,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290750,99.52,0.0,0.0,0.0,0.0,105.4,122.14,Serviço Autônomo de Água e Esgoto
+29,BA,290755,51.23,0.0,0.0,27.06,100.0,137.71,116.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290760,88.85,0.0,0.0,0.0,0.0,118.64,129.6,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290770,52.93,0.0,0.0,38.27,100.0,112.45,114.35,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290780,66.44,0.0,0.0,0.0,0.0,112.5,147.67,Prefeitura Municipal de Cícero Dantas
+29,BA,290790,71.28,0.0,0.0,0.0,0.0,122.43,87.15,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290800,88.81,0.0,0.0,0.0,0.0,116.2,114.37,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290820,72.14,0.0,0.0,1.67,100.0,134.7,112.63,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290830,60.09,0.0,0.0,0.0,0.0,98.11,120.08,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290840,84.93,0.0,0.0,3.61,100.0,92.55,110.78,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290850,77.76,0.0,0.0,7.04,100.0,67.54,105.95,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290860,59.31,0.0,0.0,35.79,100.0,118.13,78.74,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290870,46.67,0.0,0.0,0.0,0.0,127.32,142.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290880,49.18,0.0,0.0,0.0,0.0,140.31,142.95,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290890,42.15,0.0,0.0,0.0,0.0,100.66,110.12,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290900,72.26,0.0,0.0,0.0,0.0,122.13,79.76,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290920,47.87,0.0,0.0,0.0,0.0,121.24,127.56,Prefeitura Municipal de Coronel João Sá
+29,BA,290930,81.87,0.0,0.0,0.0,0.0,197.68,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,290940,49.16,0.0,0.0,0.0,0.0,159.39,108.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290950,66.55,0.0,0.0,69.46,100.0,96.15,167.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290960,42.86,0.0,0.0,0.0,0.0,103.85,137.5,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290970,38.61,0.0,0.0,0.0,0.0,120.09,135.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290980,90.05,0.0,0.0,60.69,100.0,99.06,101.49,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,290990,88.13,0.0,0.0,100.0,75.16,88.65,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,291000,39.44,0.0,0.0,0.0,0.0,138.09,124.54,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291005,97.94,0.0,0.0,63.39,100.0,82.22,132.06,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291010,77.63,0.0,0.0,0.0,0.0,127.63,100.0,Serviço Autônomo de Água e Esgotos
+29,BA,291020,99.75,0.0,0.0,0.0,0.0,108.15,107.87,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291030,40.69,0.0,0.0,0.0,0.0,123.81,100.64,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291040,27.68,0.0,0.0,67.07,99.55,116.71,137.37,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291050,61.79,0.0,0.0,21.51,100.0,113.85,91.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291060,97.21,0.0,0.0,0.0,0.0,84.0,96.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291070,68.25,0.0,0.0,23.82,100.0,108.84,113.54,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291072,93.12,0.0,0.0,10.16,100.0,104.19,104.96,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291075,90.6,0.0,0.0,0.0,0.0,102.33,127.48,Prefeitura Municipal de Fátima
+29,BA,291077,99.77,0.0,0.0,0.0,0.0,87.63,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,291080,89.79,0.0,0.0,68.42,99.95,118.04,106.41,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291085,74.11,0.0,0.0,0.0,0.0,115.31,141.47,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291090,87.95,0.0,0.0,0.0,0.0,106.95,80.91,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291100,68.73,0.0,0.0,0.0,0.0,95.58,133.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291110,64.38,0.0,0.0,0.0,0.0,117.82,123.45,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291120,75.47,0.0,0.0,0.0,0.0,99.14,134.01,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291125,59.33,0.0,0.0,0.0,0.0,126.0,125.0,Prefeitura Municipal de Gavião
+29,BA,291130,50.28,0.0,0.0,66.55,99.99,69.05,132.69,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291140,63.6,0.0,0.0,19.37,100.0,109.15,103.86,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291150,64.01,0.0,0.0,0.0,0.0,99.26,121.76,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291160,51.17,0.0,0.0,0.0,0.0,127.25,118.86,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291165,27.57,0.0,0.0,0.0,0.0,153.75,59.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291170,79.92,0.0,0.0,64.08,100.0,153.27,99.62,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291180,47.03,0.0,0.0,0.0,0.0,96.53,344.58,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291185,61.46,0.0,0.0,0.0,0.0,107.2,137.22,Prefeitura Municipal de Heliópolis
+29,BA,291190,80.51,0.0,0.0,0.0,0.0,111.21,112.96,Prefeitura Municipal de Iaçu
+29,BA,291200,54.64,0.0,0.0,0.0,0.0,146.69,125.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291210,97.16,0.0,0.0,0.0,0.0,209.42,100.0,Serviço Autônomo de Água e Esgoto
+29,BA,291220,63.43,0.0,0.0,0.0,0.0,42.05,139.78,Prefeitura Municipal de Ibicoara
+29,BA,291230,75.72,0.0,0.0,0.0,0.0,101.36,111.81,Prefeitura Municipal de Ibicuí
+29,BA,291240,88.35,0.0,0.0,0.0,0.0,100.38,119.2,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291250,35.24,0.0,0.0,0.0,0.0,140.71,109.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291260,54.93,0.0,0.0,0.0,0.0,123.11,125.64,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291270,56.51,0.0,0.0,0.0,0.0,87.85,127.55,Prefeitura Municipal de Ibirapitanga
+29,BA,291280,56.97,0.0,0.0,0.0,0.0,135.66,117.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291290,83.09,0.0,0.0,0.0,0.0,96.29,149.04,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291300,30.14,0.0,0.0,37.08,100.0,87.52,180.56,Central - Sistemas de Saneamento de Seabra
+29,BA,291310,95.99,0.0,0.0,0.0,0.0,117.5,119.52,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291320,79.22,0.0,0.0,77.59,100.0,116.66,108.99,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291330,83.51,0.0,0.0,0.0,0.0,107.83,118.59,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291340,82.47,0.0,0.0,61.98,92.57,139.9,99.36,Serviço Autônomo de Água e Esgoto
+29,BA,291345,31.85,0.0,0.0,0.0,0.0,97.89,121.76,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291350,56.71,0.0,0.0,9.94,100.0,103.96,134.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291360,87.44,0.0,0.0,70.86,100.0,126.0,108.07,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291370,58.34,0.0,0.0,0.0,0.0,100.37,77.54,Prefeitura Municipal de Inhambupe
+29,BA,291380,71.4,0.0,0.0,0.0,0.0,88.76,110.53,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291390,90.84,0.0,0.0,31.64,100.0,108.7,117.8,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291400,64.8,0.0,0.0,36.68,100.0,114.31,106.77,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291410,67.29,0.0,0.0,61.62,100.0,99.21,136.59,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291420,64.4,0.0,0.0,0.0,0.0,79.03,183.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291430,45.07,0.0,0.0,0.0,0.0,111.63,106.71,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291440,43.01,0.0,0.0,0.0,0.0,107.52,68.9,Central - Sistemas de Saneamento de Seabra
+29,BA,291450,66.76,0.0,0.0,0.0,0.0,398.28,64.91,Prefeitura Municipal de Irará
+29,BA,291460,98.59,0.0,0.0,12.69,100.0,117.67,102.41,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291465,85.5,0.0,0.0,3.45,100.0,88.68,73.41,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291470,89.22,0.0,0.0,45.7,100.0,107.28,94.78,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291490,50.79,0.0,0.0,66.03,100.0,144.69,125.0,Prefeitura Municipal de Itacaré
+29,BA,291500,55.41,0.0,0.0,0.0,0.0,100.54,138.71,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291510,77.79,0.0,0.0,0.0,0.0,93.89,92.38,Prefeitura Municipal de Itagi
+29,BA,291520,62.97,0.0,0.0,19.28,100.0,120.59,105.37,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291530,77.97,0.0,0.0,0.0,0.0,104.29,108.73,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291535,40.47,0.0,0.0,0.0,0.0,112.29,114.74,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291540,79.99,0.0,0.0,63.4,100.0,94.17,97.22,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291550,100.0,0.0,0.0,83.7,0.0,107.53,74.18,Serviço Autônomo de Água e Esgoto de Itajuípe
+29,BA,291560,78.8,0.0,0.0,75.02,100.0,106.38,95.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291570,73.21,0.0,0.0,0.0,0.0,92.07,107.14,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291580,90.59,0.0,0.0,5.71,97.84,87.51,122.05,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291590,49.54,0.0,0.0,0.0,0.0,135.3,81.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291600,70.03,0.0,0.0,0.0,0.0,112.36,93.61,Prefeitura Municipal de Itanhém
+29,BA,291610,79.03,0.0,0.0,56.88,100.0,117.0,113.16,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291620,74.93,0.0,0.0,0.0,0.0,114.64,119.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291630,78.74,0.0,0.0,0.0,0.0,93.62,81.79,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291640,100.0,0.0,0.0,91.11,16.54,129.16,129.07,Serviço Autônomo de Água e Esgoto
+29,BA,291650,35.24,0.0,0.0,0.0,12.8,145.56,108.65,Prefeitura Municipal de Itapicuru
+29,BA,291660,79.89,0.0,0.0,0.0,0.0,83.31,84.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291670,59.89,0.0,0.0,0.0,0.0,106.16,126.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291680,82.37,0.0,0.0,0.0,0.0,100.75,75.95,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291685,98.14,0.0,0.0,0.0,0.0,105.7,115.23,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291690,88.66,0.0,0.0,0.0,0.0,90.2,106.86,Prefeitura Municipal de Itiruçu
+29,BA,291700,40.44,0.0,0.0,13.09,100.0,106.1,102.08,Central - Sistemas de Saneamento de Jacobina
+29,BA,291710,96.92,0.0,0.0,60.95,0.0,134.84,413.1,Serviços Autônomos de Água e Esgotos
+29,BA,291720,35.98,0.0,0.0,0.0,0.0,121.04,92.56,Prefeitura Municipal de Ituaçu
+29,BA,291730,75.49,0.0,0.0,8.65,100.0,83.8,71.84,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291733,48.48,0.0,0.0,82.55,100.0,100.37,81.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291735,33.85,0.0,0.0,9.18,100.0,414.7,59.26,Serviço Autônomo de Água e Esgoto
+29,BA,291740,35.97,0.0,0.0,42.89,100.0,69.9,100.93,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291750,82.34,0.0,0.0,12.41,100.0,117.34,101.95,Central - Sistemas de Saneamento de Jacobina
+29,BA,291760,76.14,0.0,0.0,42.8,100.0,94.3,112.99,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291770,62.89,0.0,0.0,76.65,100.0,112.18,109.26,Central - Sistemas de Saneamento de Jacobina
+29,BA,291780,54.07,0.0,0.0,0.0,0.0,88.65,116.22,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291790,59.17,0.0,0.0,0.0,0.0,80.68,104.76,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291800,90.74,0.0,0.0,89.17,100.0,107.69,108.81,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291810,48.36,0.0,0.0,0.0,0.0,123.6,83.18,Prefeitura Municipal de Jeremoabo
+29,BA,291820,39.52,0.0,0.0,53.53,100.0,116.85,94.87,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291830,65.61,0.0,0.0,0.0,0.0,101.49,132.5,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291835,91.47,0.0,0.0,0.0,0.0,105.03,103.7,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291840,89.3,0.0,0.0,64.3,82.25,153.31,106.01,Serviço Autônomo de Água e Esgoto de Juazeiro
+29,BA,291845,32.28,0.0,0.0,0.0,0.0,133.69,82.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291850,89.8,0.0,0.0,0.0,0.0,105.2,112.96,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291855,84.04,0.0,0.0,0.0,0.0,183.42,100.0,Prefeitura Municipal de Jussari
+29,BA,291860,38.2,0.0,0.0,0.0,0.0,171.07,105.38,Central - Sistemas de Saneamento de Seabra
+29,BA,291870,49.82,0.0,0.0,0.0,0.0,115.57,115.74,Prefeitura Municipal de Lafaiete Coutinho
+29,BA,291875,20.13,0.0,0.0,0.0,0.0,116.09,96.93,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291880,26.6,0.0,0.0,53.03,100.0,97.25,87.3,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291890,65.75,0.0,0.0,0.0,0.0,154.24,85.19,Prefeitura Municipal de Lajedão
+29,BA,291900,66.37,0.0,0.0,18.04,100.0,103.32,125.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291905,60.92,0.0,0.0,0.0,0.0,81.27,120.37,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291910,61.69,0.0,0.0,0.0,0.0,134.62,137.78,Prefeitura Municipal de Lamarão
+29,BA,291915,99.89,0.0,0.0,0.0,0.0,106.91,109.92,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291920,98.27,0.0,0.0,69.1,97.77,162.84,133.86,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291930,77.48,0.0,0.0,59.3,100.0,104.02,83.72,Central - Sistemas de Saneamento de Seabra
+29,BA,291940,50.39,0.0,0.0,0.0,0.0,102.12,72.44,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291950,50.44,0.0,0.0,0.0,0.0,141.24,85.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291955,91.16,0.0,0.0,67.35,100.0,142.59,89.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291960,65.0,0.0,0.0,0.0,0.0,120.06,108.77,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291970,88.8,0.0,0.0,49.48,0.0,175.0,101.63,Serviço Autônomo de Água e Esgoto
+29,BA,291980,90.0,0.0,0.0,37.56,0.0,119.89,130.95,Serviço Autônomo de Água e Esgoto
+29,BA,291990,62.82,0.0,0.0,0.0,0.0,120.32,100.0,Prefeitura Municipal de Macururé
+29,BA,291992,96.97,0.0,0.0,77.9,99.79,99.83,130.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,291995,63.16,0.0,0.0,0.0,0.0,134.83,115.0,Prefeitura Municipal de Maetinga
+29,BA,292000,78.66,0.0,0.0,0.0,0.0,100.14,122.76,Prefeitura Municipal de Maiquinique
+29,BA,292010,59.67,0.0,0.0,0.0,0.0,94.26,199.31,Prefeitura Municipal de Mairi
+29,BA,292020,52.43,0.0,0.0,0.0,0.0,108.98,87.07,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292030,42.27,0.0,0.0,0.0,0.0,147.08,42.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292040,51.13,0.0,0.0,0.0,0.0,97.5,92.28,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292045,52.88,0.0,0.0,0.0,0.0,96.81,83.93,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292050,75.7,0.0,0.0,0.0,0.0,83.74,101.62,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292060,59.14,0.0,0.0,58.67,100.0,89.13,83.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292070,18.64,0.0,0.0,0.0,0.0,80.1,95.83,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292080,68.53,0.0,0.0,0.0,0.0,98.3,116.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292090,79.22,0.0,0.0,0.0,0.0,78.75,88.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292100,84.46,0.0,0.0,66.2,100.0,161.12,102.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292105,31.16,0.0,0.0,0.0,0.0,125.47,88.19,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292110,79.03,0.0,0.0,0.0,0.0,119.16,75.41,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292120,80.25,0.0,0.0,16.47,99.98,164.89,133.17,Central - Sistemas de Saneamento de Jacobina
+29,BA,292130,79.39,0.0,0.0,0.0,0.0,120.87,115.62,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292140,66.77,0.0,0.0,47.94,100.0,67.14,71.06,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292145,17.22,0.0,0.0,0.0,0.0,145.16,110.65,Prefeitura Municipal de Mirante
+29,BA,292150,39.91,0.0,0.0,0.0,0.0,108.28,129.63,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292160,66.47,0.0,0.0,0.0,0.0,114.12,89.02,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292170,63.3,0.0,0.0,62.94,100.0,89.88,120.04,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292180,46.7,0.0,0.0,0.0,0.0,126.01,64.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292190,100.0,0.0,0.0,55.82,100.0,329.37,100.0,Prefeitura Municipal de Mucugê
+29,BA,292200,70.96,0.0,0.0,89.07,100.0,64.42,96.87,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292205,66.72,0.0,0.0,0.0,0.0,101.86,131.25,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292210,81.75,0.0,0.0,0.0,0.0,80.19,78.63,Prefeitura Municipal de Mundo Novo
+29,BA,292220,53.24,0.0,0.0,0.0,0.0,100.79,100.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292225,42.71,0.0,0.0,19.39,100.0,137.27,118.98,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292230,86.91,0.0,0.0,44.38,100.0,97.53,117.32,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292240,44.94,0.0,0.0,77.65,100.0,119.2,81.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292250,79.61,0.0,0.0,0.0,0.0,101.14,84.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292260,24.59,0.0,0.0,0.0,0.0,112.05,77.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292265,50.18,0.0,0.0,0.0,0.0,94.37,126.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292270,41.0,0.0,0.0,0.0,8.47,112.51,105.08,Prefeitura Municipal de Nova Canaã
+29,BA,292273,87.37,0.0,0.0,0.0,0.0,114.58,128.09,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292275,42.18,0.0,0.0,0.0,0.0,101.47,102.31,Prefeitura Municipal de Nova Ibiá
+29,BA,292280,86.22,0.0,0.0,0.0,0.0,101.02,106.02,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292285,82.29,0.0,0.0,0.0,0.0,85.12,111.29,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292290,48.54,0.0,0.0,0.0,0.0,103.21,60.21,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292300,85.86,0.0,0.0,5.49,100.0,66.49,91.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292303,77.73,0.0,0.0,0.0,0.0,157.73,100.0,Prefeitura Municipal de Novo Horizonte
+29,BA,292305,49.85,0.0,0.0,0.0,0.0,70.09,66.67,Prefeitura Municipal de Novo Triunfo
+29,BA,292310,50.78,0.0,0.0,0.0,0.0,113.49,31.83,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292320,32.59,0.0,0.0,0.0,0.0,289.94,100.0,Sistema Autônomo de Água e Esgotos
+29,BA,292330,81.74,0.0,0.0,0.0,0.0,96.58,43.48,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292335,45.73,0.0,0.0,49.9,100.0,115.34,105.18,Central - Sistemas de Saneamento de Jacobina
+29,BA,292340,47.12,0.0,0.0,0.0,0.0,118.87,52.98,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292350,62.29,0.0,0.0,71.12,100.0,100.01,96.43,Central - Sistemas de Saneamento de Seabra
+29,BA,292360,80.89,0.0,0.0,0.0,0.0,130.37,131.02,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292380,99.85,0.0,0.0,0.0,0.0,75.11,127.59,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292390,67.82,0.0,0.0,0.0,0.0,103.29,81.48,Prefeitura Municipal de Pau Brasil
+29,BA,292400,85.73,0.0,0.0,38.67,99.99,116.83,106.34,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292405,59.34,0.0,0.0,0.0,0.0,107.15,103.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292410,57.66,0.0,0.0,0.0,0.0,135.35,82.1,Prefeitura Municipal de Pedrão
+29,BA,292420,31.43,0.0,0.0,0.0,0.0,112.62,132.14,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292430,100.0,0.0,0.0,1.97,0.0,195.87,100.0,Prefeitura Municipal de Piatã
+29,BA,292450,26.74,0.0,0.0,0.0,0.0,177.61,114.35,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292465,67.81,0.0,0.0,0.0,100.0,84.85,115.28,Prefeitura Municipal de Pintadas
+29,BA,292467,37.32,0.0,0.0,0.0,0.0,95.55,102.78,Prefeitura Municipal de Piraí do Norte
+29,BA,292470,48.38,0.0,0.0,0.0,0.0,124.24,97.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292480,78.64,0.0,0.0,0.0,0.0,91.24,135.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292490,41.24,0.0,0.0,0.0,0.0,106.05,121.3,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292500,66.1,0.0,0.0,0.0,0.0,94.65,123.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292510,81.5,0.0,0.0,0.0,0.0,104.98,108.9,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292520,87.2,0.0,0.0,0.0,0.0,102.61,110.0,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292525,81.2,0.0,0.0,0.0,0.0,124.1,131.03,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292530,76.94,0.0,0.0,100.0,100.0,98.96,106.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292540,80.14,0.0,0.0,0.0,0.0,141.27,89.43,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292550,63.04,0.0,0.0,0.0,0.0,118.24,103.29,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292560,99.73,0.0,0.0,0.0,0.0,107.41,124.07,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292570,30.5,0.0,0.0,0.0,0.0,129.88,76.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292575,60.11,0.0,0.0,0.0,0.0,86.62,104.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292580,68.72,0.0,0.0,0.0,0.0,95.45,70.42,Prefeitura Municipal de Queimadas
+29,BA,292590,66.94,0.0,0.0,0.0,0.0,98.21,135.68,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292593,86.89,0.0,0.0,0.0,0.0,91.11,99.12,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292595,48.29,0.0,0.0,0.0,0.0,123.43,108.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292600,57.75,0.0,0.0,80.0,33.33,92.57,108.33,Serviço Autônomo de Água e Esgoto
+29,BA,292610,92.56,0.0,0.0,0.0,0.0,88.53,158.33,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292620,50.82,0.0,0.0,0.0,0.0,111.97,118.89,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292630,83.29,0.0,0.0,1.85,100.0,108.64,114.73,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292640,42.93,0.0,0.0,0.0,0.0,222.22,127.98,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292650,13.32,0.0,0.0,0.0,0.0,95.35,47.69,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292660,69.71,0.0,0.0,1.23,100.0,115.27,102.51,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292665,3.0,0.0,0.0,0.0,0.0,121.91,132.05,Serviço Autônomo de Água e Esgoto
+29,BA,292670,47.68,0.0,0.0,49.49,100.0,110.01,83.33,Central - Sistemas de Saneamento de Seabra
+29,BA,292680,57.99,0.0,0.0,12.25,100.0,119.99,139.77,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292690,43.2,0.0,0.0,0.0,0.0,123.11,116.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292700,77.78,0.0,0.0,0.0,0.0,102.07,98.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292710,94.1,0.0,0.0,100.0,27.6,73.1,100.0,Prefeitura Municipal de Rodelas
+29,BA,292720,80.56,0.0,0.0,8.14,100.0,101.0,69.69,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292730,99.91,0.0,0.0,0.0,0.0,100.57,111.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292740,98.76,0.0,0.0,98.97,97.8,126.17,139.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292750,54.6,0.0,0.0,0.0,0.0,157.13,130.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292760,49.4,0.0,0.0,51.61,100.0,116.13,126.32,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292770,80.42,0.0,0.0,73.2,100.0,92.96,109.94,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292780,75.9,0.0,0.0,0.0,0.0,107.12,144.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292790,94.3,0.0,0.0,71.96,100.0,85.95,181.25,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292800,68.31,0.0,0.0,0.0,0.0,98.51,50.74,Prefeitura Municipal de Santa Luz
+29,BA,292805,63.52,0.0,0.0,0.0,0.0,86.18,107.77,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292810,98.44,0.0,0.0,12.97,76.28,124.83,85.25,Serviço Autônomo de Água e Esgoto
+29,BA,292820,66.25,0.0,0.0,0.0,0.0,127.72,119.61,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292830,41.26,0.0,0.0,0.0,0.0,183.74,109.72,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292840,58.23,0.0,0.0,7.66,0.0,131.8,92.08,Serviço Autônomo de Água e Esgoto
+29,BA,292850,71.41,0.0,0.0,0.0,0.0,121.98,115.0,Prefeitura Municipal de Santa Teresinha
+29,BA,292860,84.61,0.0,0.0,52.73,99.75,93.75,110.91,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292870,83.97,0.0,0.0,22.06,100.0,129.65,101.73,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292880,57.76,0.0,0.0,14.77,100.0,151.31,107.51,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292890,40.59,0.0,0.0,0.0,0.0,127.24,62.79,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292895,79.25,0.0,0.0,0.0,0.0,111.7,102.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292900,64.51,0.0,0.0,90.57,100.0,84.7,117.59,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292905,100.0,0.0,0.0,0.0,0.0,136.38,118.42,Serviço Autônomo de Água e Esgoto
+29,BA,292910,46.83,0.0,0.0,0.0,0.0,110.0,78.03,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292920,99.34,0.0,0.0,42.74,99.45,96.13,127.72,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292925,92.98,0.0,0.0,0.0,0.0,110.0,118.55,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292930,75.77,0.0,0.0,6.86,100.0,109.92,95.93,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292935,89.97,0.0,0.0,0.0,0.0,110.22,114.81,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292937,84.6,0.0,0.0,0.0,0.0,105.96,102.78,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292940,32.24,0.0,0.0,0.0,0.0,112.46,57.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292950,80.54,0.0,0.0,5.29,99.15,92.47,140.92,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292960,84.15,0.0,0.0,0.0,0.0,95.16,122.22,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292970,28.63,0.0,0.0,0.0,0.0,140.71,12.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292975,100.0,0.0,0.0,0.0,0.0,161.66,146.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,292980,64.41,0.0,0.0,6.96,2.03,151.61,100.0,Central - Sistemas de Saneamento de Jacobina
+29,BA,292990,48.5,0.0,0.0,0.0,0.0,109.8,91.53,Central - Sistemas de Saneamento de Seabra
+29,BA,293000,96.15,0.0,0.0,0.0,0.0,50.87,100.0,Prefeitura Municipal de Sebastião Laranjeiras
+29,BA,293010,91.74,0.0,0.0,4.57,100.0,115.6,92.51,Prefeitura Municipal de Senhor do Bonfim
+29,BA,293020,39.31,0.0,0.0,29.0,0.0,90.8,100.0,Prefeitura Municipal de Sento Sé
+29,BA,293030,43.81,0.0,0.0,0.0,0.0,172.61,98.26,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293040,54.53,0.0,0.0,0.0,0.0,106.81,112.37,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293050,97.72,0.0,0.0,8.52,100.0,107.01,88.96,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293060,92.83,0.0,0.0,0.0,0.0,124.73,103.53,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293070,77.61,0.0,0.0,79.32,97.77,126.47,120.88,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293076,50.79,0.0,0.0,0.0,0.0,127.74,109.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293080,50.84,0.0,0.0,0.0,0.0,97.32,128.51,Central - Sistemas de Saneamento de Seabra
+29,BA,293090,60.11,0.0,0.0,0.0,0.0,342.47,100.0,Prefeitura Municipal de Tabocas do Brejo Velho
+29,BA,293100,42.99,0.0,0.0,0.0,0.0,109.84,148.33,Prefeitura Municipal de Tanhaçu
+29,BA,293105,59.49,0.0,0.0,0.0,0.0,119.65,131.82,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293110,100.0,0.0,0.0,0.0,0.0,96.34,116.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293120,60.66,0.0,0.0,77.52,0.0,139.16,73.33,Serviço Autônomo de Água e Esgotos
+29,BA,293130,80.01,0.0,0.0,0.0,0.0,64.54,129.35,Prefeitura Municipal de Tapiramutá
+29,BA,293135,92.71,0.0,0.0,73.18,100.0,88.06,109.6,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293140,79.82,0.0,0.0,0.0,0.0,121.92,106.3,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293150,97.16,0.0,0.0,0.0,0.0,83.53,163.03,Prefeitura Municipal de Teofilândia
+29,BA,293160,32.21,0.0,0.0,0.0,0.0,84.36,92.46,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293170,89.7,0.0,0.0,0.0,0.0,75.43,51.49,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293180,25.38,0.0,0.0,0.0,0.0,147.64,126.85,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293190,55.87,0.0,0.0,44.48,98.77,124.95,84.8,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293200,54.16,0.0,0.0,0.0,0.0,115.76,108.64,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293210,44.67,0.0,0.0,61.2,100.0,105.75,86.83,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293220,87.53,0.0,0.0,0.0,0.0,108.98,110.34,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293230,70.77,0.0,0.0,0.0,0.0,98.93,146.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293240,94.82,0.0,0.0,0.0,0.0,136.26,106.17,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293245,44.11,0.0,0.0,56.07,100.0,190.7,161.67,Central - Sistemas de Saneamento de Jacobina
+29,BA,293250,62.47,0.0,0.0,15.59,100.0,117.08,113.78,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293260,100.0,0.0,0.0,34.67,0.0,513.62,100.0,Prefeitura Municipal de Urandi
+29,BA,293270,84.5,0.0,0.0,16.12,100.0,104.86,108.13,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293280,70.49,0.0,0.0,0.0,0.0,90.09,64.23,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293290,84.0,0.0,0.0,80.0,0.0,126.04,62.37,Serviço Autônomo de Água e Esgoto
+29,BA,293300,99.77,0.0,0.0,0.0,0.0,78.03,111.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293305,79.93,0.0,0.0,0.0,0.0,93.44,68.12,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293310,83.69,0.0,0.0,0.0,0.0,92.84,171.67,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293315,69.13,0.0,0.0,79.88,99.28,108.58,161.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293317,36.1,0.0,0.0,0.0,0.0,131.71,106.48,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293320,100.0,0.0,0.0,29.01,100.0,139.18,102.11,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293325,42.16,0.0,0.0,0.0,0.0,125.19,97.31,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293330,97.18,0.0,0.0,86.13,99.16,109.92,109.35,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293340,72.16,0.0,0.0,0.0,0.0,91.0,80.77,Central - Sistemas de Saneamento de Seabra
+29,BA,293345,55.13,0.0,0.0,0.0,0.0,146.23,122.81,Empresa Baiana de Águas e Saneamento S.A.
+29,BA,293350,48.8,0.0,0.0,0.0,0.0,97.67,100.73,Empresa Baiana de Águas e Saneamento S.A.
