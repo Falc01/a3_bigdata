@@ -18,22 +18,20 @@ def integrar_base_historica():
     # Transformaçao: Nomes de Colunas (Semelhante ao app.py deles)
     df.columns = ['Indicador', 'Ano', 'co_uf', 'obitos_infantis', 'nascidos_vivos', 'Fator']
     
-    # Transformação: Filtrar 2022
-    df_2022 = df[df['Ano'] == 2022].copy()
-    
     # Transformação: Cálculo da Taxa
-    df_2022['taxa_mortalidade_infantil'] = (df_2022['obitos_infantis'] / df_2022['nascidos_vivos']) * df_2022['Fator']
+    df['taxa_mortalidade_infantil'] = (df['obitos_infantis'] / df['nascidos_vivos']) * df['Fator']
+    df_full = df[['Ano', 'co_uf', 'nascidos_vivos', 'obitos_infantis', 'taxa_mortalidade_infantil']].rename(columns={'Ano': 'ano'})
     
-    # Remover colunas desnecessárias para a Gold
-    df_2022 = df_2022[['Ano', 'co_uf', 'nascidos_vivos', 'obitos_infantis', 'taxa_mortalidade_infantil']]
-    df_2022 = df_2022.rename(columns={'Ano': 'ano'})
+    # Carga: Salvar na camada Gold a base histórica completa
+    dest_full = gold_path / "base_mortalidade_nacional.csv"
+    df_full.to_csv(dest_full, index=False)
+    print(f"[OK] Base nacional completa salva em: {dest_full.name}")
     
-    # Carga: Salvar na camada Gold
-    dest = gold_path / "base_mortalidade_nacional_2022.csv"
-    df_2022.to_csv(dest, index=False)
-    
-    print(f"[OK] Base nacional 2022 salva em: {dest.name}")
-    print(f"Total de registros (UFs): {len(df_2022)}")
+    # Carga: Salvar na camada Gold a base 2022 para compatibilidade
+    df_2022 = df_full[df_full['ano'] == 2022].copy()
+    dest_2022 = gold_path / "base_mortalidade_nacional_2022.csv"
+    df_2022.to_csv(dest_2022, index=False)
+    print(f"[OK] Base nacional 2022 salva em: {dest_2022.name}")
     print(df_2022.head())
 
 if __name__ == "__main__":

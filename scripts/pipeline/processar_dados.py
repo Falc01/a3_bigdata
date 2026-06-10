@@ -73,13 +73,16 @@ def processar_silver():
     # Configuração de processamento por arquivo
     config = {
         "Planilha_Indicadores_RS_2022.xlsx": {"type": "xlsx", "fix_layout": True},
-        "macroregiao_de_saude.csv": {"type": "csv", "sep": None}
+        "macroregiao_de_saude.csv": {"type": "csv", "sep": None},
+        "proporcao_agua.csv": {"type": "csv", "sep": ","},
+        "proporcao_lixo.csv": {"type": "csv", "sep": ","},
+        "proporcao_sanitaria.csv": {"type": "csv", "sep": ","}
     }
     
     for nome, cfg in config.items():
         caminho = bronze_path / nome
         if not caminho.exists():
-            print(f"[AVISO] Arquivo nao encontrado: {nome}")
+            print(f"[AVISO] Arquivo nao encontrado: {caminho}")
             continue
             
         print(f"[PROCESSANDO] {nome}...")
@@ -95,6 +98,10 @@ def processar_silver():
             
             # Aplicar limpeza base
             df = clean_dataframe(df)
+
+            # Para as bases de proporcao, remover linhas onde o indicador e nulo
+            if "proporcao_" in nome and "vl_indicador_calculado_uf" in df.columns:
+                df = df.dropna(subset=["vl_indicador_calculado_uf"])
             
             # Aplicar filtro TC (Todas as Categorias) para bases RIPSA/Proporcao
             if cfg.get("tc_filter") and "sg_categoria" in df.columns:

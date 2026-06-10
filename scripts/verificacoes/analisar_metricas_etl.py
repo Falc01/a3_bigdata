@@ -17,8 +17,8 @@ def analisar_metricas():
     landing_path = Path("data/landing")
     gold_path = Path("data/gold")
     
-    sim_file = landing_path / "sim_cnv_inf10ba180535179_105_131_169.csv"
-    sinasc_file = landing_path / "sinasc_cnv_nvba180642179_105_131_169.csv"
+    sim_file = landing_path / "sim_cnv_inf10ba131422187_107_8_217.csv"
+    sinasc_file = landing_path / "sinasc_cnv_nvba131418187_107_8_217.csv"
     
     gold_mort_file = gold_path / "base_mortalidade_municipal_2022.csv"
     gold_snis_file = gold_path / "base_snis_geografia.csv"
@@ -29,13 +29,23 @@ def analisar_metricas():
     
     if sim_file.exists() and sinasc_file.exists() and gold_mort_file.exists():
         try:
-            # Ler brutos (Landing), pulando cabecalho
-            df_sim_raw = pd.read_csv(sim_file, sep=';', encoding='latin1', skiprows=3)
+            # Encontrar dinamicamente a linha de cabeçalho
+            def find_header_and_load(path):
+                h_row = 3
+                with open(path, 'r', encoding='latin1') as f_in:
+                    for idx, line in enumerate(f_in):
+                        if 'Munic' in line and ';' in line:
+                            h_row = idx
+                            break
+                return pd.read_csv(path, sep=';', encoding='latin1', skiprows=h_row)
+
+            # Ler brutos (Landing)
+            df_sim_raw = find_header_and_load(sim_file)
             df_sim_raw = df_sim_raw.dropna(subset=[df_sim_raw.columns[0]])
             df_sim_raw = df_sim_raw[~df_sim_raw[df_sim_raw.columns[0]].str.contains('Total|IGNORADO', na=False, case=False)]
             sim_raw_count = len(df_sim_raw)
             
-            df_sinasc_raw = pd.read_csv(sinasc_file, sep=';', encoding='latin1', skiprows=3)
+            df_sinasc_raw = find_header_and_load(sinasc_file)
             df_sinasc_raw = df_sinasc_raw.dropna(subset=[df_sinasc_raw.columns[0]])
             df_sinasc_raw = df_sinasc_raw[~df_sinasc_raw[df_sinasc_raw.columns[0]].str.contains('Total|IGNORADO', na=False, case=False)]
             sinasc_raw_count = len(df_sinasc_raw)
@@ -129,7 +139,7 @@ def analisar_metricas():
             ba_births = df_mort['nascidos_vivos'].sum()
             ba_deaths = df_mort['obitos_infantis'].sum()
             ba_overall_rate = (ba_deaths / ba_births * 1000) if ba_births > 0 else 0
-            print(f"\nEstatistica Consolidada da Bahia (2022):")
+            print(f"\nEstatistica Consolidada da Bahia (Série 2018-2022 Acumulada):")
             print(f"  Total de Nascidos Vivos: {int(ba_births)}")
             print(f"  Total de Obitos Infantils (<1 ano): {int(ba_deaths)}")
             print(f"  Taxa de Mortalidade Geral do Estado: {ba_overall_rate:.2f} por 1.000 nascidos vivos")

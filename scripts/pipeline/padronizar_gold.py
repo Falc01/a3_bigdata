@@ -39,17 +39,18 @@ if p_snis.exists():
     df_snis.to_csv(p_snis, index=False)
     print('Padronizado base_snis_geografia.csv')
 
-# 2. Padronizar base_consolidada_2022.csv
-p_cons = gold_dir / 'base_consolidada_2022.csv'
-if p_cons.exists():
-    df_cons = pd.read_csv(p_cons)
+# 2. Padronizar base_consolidada.csv e base_consolidada_2022.csv
+renames = {
+    'vl_indicador_calculado_uf_agua': 'tx_cobertura_agua',
+    'vl_indicador_calculado_uf_lixo': 'tx_cobertura_lixo',
+    'vl_indicador_calculado_uf_sani': 'tx_cobertura_esgoto',
+    'vl_indicador_saude_infantil': 'taxa_mortalidade_infantil'
+}
 
-    renames = {
-        'vl_indicador_calculado_uf_agua': 'tx_cobertura_agua',
-        'vl_indicador_calculado_uf_lixo': 'tx_cobertura_lixo',
-        'vl_indicador_calculado_uf_sani': 'tx_cobertura_esgoto',
-        'vl_indicador_saude_infantil': 'tx_causas_mal_definidas'
-    }
-    df_cons = df_cons.rename(columns=renames)
-    df_cons.to_csv(p_cons, index=False)
-    print('Padronizado base_consolidada_2022.csv')
+for file_name in ['base_consolidada.csv', 'base_consolidada_2022.csv']:
+    p_cons = gold_dir / file_name
+    if p_cons.exists():
+        df_cons = pd.read_csv(p_cons)
+        df_cons = df_cons.rename(columns={c: r for c, r in renames.items() if c in df_cons.columns})
+        df_cons.to_csv(p_cons, index=False)
+        print(f'Padronizado {file_name}')

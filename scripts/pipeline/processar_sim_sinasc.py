@@ -13,9 +13,9 @@ def ler_tabnet_limpo(caminho):
     # Lendo arquivo
     df = pd.read_csv(caminho, sep=';', encoding='latin1', skiprows=header_row, engine='python')
     
-    # Pegar o nome da primeira coluna (Município) e da segunda (Valor do indicador)
+    # Pegar o nome da primeira coluna (Município) e do valor do indicador
     col_municipio = df.columns[0]
-    col_valor = df.columns[1]
+    col_valor = 'Total' if 'Total' in df.columns else df.columns[1]
     
     # Tratar traços e valores não numéricos
     df[col_valor] = df[col_valor].astype(str).str.replace('-', '0')
@@ -37,10 +37,10 @@ def ler_tabnet_limpo(caminho):
     return df[['co_municipio', 'no_municipio', col_valor]]
 
 def processar_sim_sinasc():
-    print("--- Processando SIM e SINASC (2022) ---")
+    print("--- Processando SIM e SINASC (Série 2018-2022 Acumulada) ---")
     
-    sim_path = Path("data/landing/sim_cnv_obt10ba135205187_107_8_217.csv")
-    sinasc_path = Path("data/landing/sinasc_cnv_nvba135328187_107_8_217.csv")
+    sim_path = Path("data/landing/sim_cnv_inf10ba131422187_107_8_217.csv")
+    sinasc_path = Path("data/landing/sinasc_cnv_nvba131418187_107_8_217.csv")
     gold_path = Path("data/gold")
     gold_path.mkdir(parents=True, exist_ok=True)
     
