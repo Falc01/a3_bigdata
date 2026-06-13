@@ -56,6 +56,9 @@ def consolidar_gold():
             df_final['tx_cobertura_esgoto']
         ) / 3
         
+        # Adicionar coluna ano explicita
+        df_final['ano'] = df_final['co_anomes'] // 100
+        
         # Limpar colunas temporarias ou redundantes
         df_final = df_final.drop(columns=['Ano', 'vl_indicador_calculado_uf'])
         
