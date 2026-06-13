@@ -128,9 +128,9 @@ Após a execução do pipeline de ETL, os dados gerados revelam as seguintes est
     *   Taxa de Mortalidade Geral do Estado: **14.94** óbitos por 1.000 nascidos vivos.
 *   **Auditoria de Qualidade (Quality Gate):** Todos os 8 arquivos gerados na pasta Gold foram aprovados pelo script `verificar_checklist.py`.
 
-### Correlações de Impacto (Nível Estadual)
-A relação estatística entre a cobertura de saneamento básico e a queda da mortalidade infantil é nítida e negativa (quanto maior a cobertura sanitária, menor a taxa de mortalidade):
-*   Correlação Geral (Índice de Saneamento): **-0.414**
-*   Correlação Esgotamento Sanitário: **-0.402**
-*   Correlação Coleta de Lixo: **-0.365**
-*   Correlação Abastecimento de Água: **-0.330**
+### Correlações de Impacto (Histórico da Bahia)
+A relação estatística entre a cobertura de saneamento básico e a queda da mortalidade infantil na Bahia ao longo do tempo é muito forte e negativa:
+*   Correlação Geral (Índice de Saneamento Consolidado): **-0.603**
+*   Correlação Abastecimento de Água: **-0.637**
+*   Correlação Coleta de Lixo: **-0.627**
+*   Correlação Esgotamento Sanitário: **-0.545**
