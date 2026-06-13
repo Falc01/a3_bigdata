@@ -62,6 +62,9 @@ def consolidar_gold():
         # Renomear para manter compatibilidade com padronizar_gold.py se necessario
         df_final = df_final.rename(columns={'taxa_mortalidade_infantil': 'vl_indicador_saude_infantil'})
         
+        # Filtrar estritamente para o estado da Bahia (co_uf = 29)
+        df_final = df_final[df_final['co_uf'].astype(float) == 29.0]
+        
         # 6. Salvar Gold
         dest = gold_path / "base_consolidada.csv"
         df_final.to_csv(dest, index=False)

@@ -22,6 +22,9 @@ def integrar_base_historica():
     df['taxa_mortalidade_infantil'] = (df['obitos_infantis'] / df['nascidos_vivos']) * df['Fator']
     df_full = df[['Ano', 'co_uf', 'nascidos_vivos', 'obitos_infantis', 'taxa_mortalidade_infantil']].rename(columns={'Ano': 'ano'})
     
+    # Filtrar estritamente para o estado da Bahia (co_uf = 29)
+    df_full = df_full[df_full['co_uf'].astype(float) == 29.0]
+    
     # Carga: Salvar na camada Gold a base histórica completa
     dest_full = gold_path / "base_mortalidade_nacional.csv"
     df_full.to_csv(dest_full, index=False)

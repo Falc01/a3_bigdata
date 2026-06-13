@@ -65,13 +65,17 @@ for file in gold_path.iterdir():
             
             print(f"  Resultado: Bahia={only_ba}, 2022={only_2022}")
             
-            if not (only_ba and only_2022):
-                # Ignorar verificacao restrita para bases declaradas como nacionais/historicas
+            if not only_ba:
+                print(f"  [MOVENDO] {file.name} contem dados de outros estados! Movendo para data_dump...")
+                shutil.move(str(file), str(dump_path / file.name))
+                results.append({'file': file.name, 'status': 'Moved', 'reason': 'Failed Bahia filter'})
+            elif not only_2022:
+                # Ignorar verificacao restrita de ano para bases historicas da Bahia
                 if 'nacional' in file.name.lower() or 'historica' in file.name.lower() or file.name == 'base_consolidada.csv':
-                    print(f"  [KEEP] {file.name} e uma base nacional/historica. Mantendo.")
-                    results.append({'file': file.name, 'status': 'Kept', 'reason': 'OK (National/Historical)'})
+                    print(f"  [KEEP] {file.name} e uma base historica da Bahia. Mantendo.")
+                    results.append({'file': file.name, 'status': 'Kept', 'reason': 'OK (Bahia Historical)'})
                 else:
-                    print(f"  [MOVENDO] {file.name} para data_dump...")
+                    print(f"  [MOVENDO] {file.name} (nao e 2022) para data_dump...")
                     shutil.move(str(file), str(dump_path / file.name))
                     results.append({'file': file.name, 'status': 'Moved', 'reason': f"BA={only_ba}, 2022={only_2022}"})
             else:

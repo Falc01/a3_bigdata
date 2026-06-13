@@ -27,10 +27,10 @@ O pipeline lê **7 arquivos brutos** de origens governamentais na camada `data/l
 | `base_snis_agua_esgoto_2022.csv` | Dados consolidados de água, esgoto e conformidade da água da Bahia por município. |
 | `base_snis_geografia.csv` | Mapeamento geográfico regionalizado do SNIS Resíduos Sólidos. |
 | `base_mortalidade_municipal_2022.csv` | Dados limpos e taxa de mortalidade infantil por município baiano (série agregada). |
-| `base_consolidada.csv` | Painel de dados históricos de todas as UFs (estados) brasileiras (2016-2023). |
+| `base_consolidada.csv` | Painel de dados históricos do estado da Bahia (2016-2023). |
 | `base_consolidada_2022.csv` | Recorte do painel de estados restrito ao ano de 2022 (Bahia). |
-| `base_mortalidade_nacional.csv` | Série nacional de mortalidade por UF (2000-2023) limpa. |
-| `base_mortalidade_nacional_2022.csv` | Recorte de 2022 da mortalidade nacional por UF. |
+| `base_mortalidade_nacional.csv` | Série histórica estadual de mortalidade da Bahia (2000-2023) limpa. |
+| `base_mortalidade_nacional_2022.csv` | Recorte de 2022 da mortalidade estadual da Bahia. |
 
 ---
 
@@ -68,8 +68,8 @@ O fluxo de dados é orquestrado de forma modular, respeitando a separação fís
 ### Passo 6: Consolidação Final Municipal (`consolidar_base_municipal.py`)
 *   **Ação:** Une os dados de saúde do DATASUS com os dados de lixo (SNIS RS) e água/esgoto (SNIS AE), gerando a base consolidada final municipal.
 
-### Passos 7 e 8: Integração Nacional e Estadual (`integrar_base_historica.py` e `consolidar_base.py`)
-*   **Ação:** Constrói os painéis nacionais de estados agregando a série histórica do Ministério da Saúde (`mgdi_ms_k5p.csv`) com os indicadores de saneamento estaduais.
+### Passos 7 e 8: Integração Histórica Estadual (integrar_base_historica.py e consolidar_base.py)
+*   **Ação:** Constrói os painéis históricos estaduais para a Bahia (co_uf == 29) agregando a série histórica do Ministério da Saúde com os indicadores de saneamento estaduais.
 
 ### Passo 9: Normalização de Nomes (`padronizar_gold.py`)
 *   **Ação:** Padroniza a nomenclatura de todas as tabelas Gold para um formato limpo, sem caracteres especiais e em minúsculas (padrão *snake_case*).
