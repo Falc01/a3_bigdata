@@ -24,18 +24,18 @@ Para guiar a análise entre as 79 colunas unificadas das bases de saúde e sanea
     $$\text{taxa\_mortalidade} = \left(\frac{\text{obitos\_infantis}}{\text{nascidos\_vivos}}\right) \times 1000$$
 
 ### 1.3. Saneamento: Coleta de Lixo (SNIS Resíduos Sólidos - 2022)
-*   `tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total` *(Numérico)*: Cobertura de coleta de lixo doméstico em relação à população total do município (%).
+*   `tx_coleta_lixo_pop_total` *(Numérico)*: Cobertura de coleta de lixo doméstico em relação à população total do município (%).
 *   `auto_suficiencia_financeira` *(Numérico)*: Índice de autossuficiência financeira dos serviços públicos de manejo de resíduos (%).
-*   `taxa_de_terceirizacao_da_coleta` *(Numérico)*: Grau de terceirização do serviço de coleta de resíduos (%).
-*   `massa_rdo_coletada_per_capita_em_relacao_a_pop_total_atendida` *(Numérico)*: Quantidade de lixo doméstico gerada por habitante atendido (kg/hab/ano).
+*   `tx_terceirizacao_coleta` *(Numérico)*: Grau de terceirização do serviço de coleta de resíduos (%).
+*   `massa_lixo_per_capita` *(Numérico)*: Quantidade de lixo doméstico gerada por habitante atendido (kg/hab/ano).
 
 ### 1.4. Saneamento: Água e Esgoto (SNIS AE - 2022)
-*   `tx_atendimento_total_agua` *(Numérico)*: Porcentagem da população total do município abastecida com água tratada encanada.
+*   `tx_atendimento_agua` *(Numérico)*: Porcentagem da população total do município abastecida com água tratada encanada.
 *   `tx_coleta_esgoto` *(Numérico)*: Porcentagem da população total do município atendida por rede de coleta de esgoto doméstico.
 *   `tx_tratamento_esgoto` *(Numérico)*: Índice de tratamento de esgoto doméstico coletado (%).
 *   `consumo_per_capita_agua` *(Numérico)*: Consumo médio de água tratada por habitante (Litros/habitante/dia).
 *   `idx_conformidade_coliformes` *(Numérico)*: Índice de conformidade da qualidade da água quanto à presença de coliformes totais (indicador biológico de contaminação bacteriana).
-*   `no_prestador_servico_ae` *(Texto)*: Prestador principal de abastecimento e esgotamento sanitário (ex: EMBASA, SAAE).
+*   `prestador_servico_ae` *(Texto)*: Prestador principal de abastecimento e esgotamento sanitário (ex: EMBASA, SAAE).
 
 ---
 
@@ -43,9 +43,9 @@ Para guiar a análise entre as 79 colunas unificadas das bases de saúde e sanea
 
 A equipe de EDA deve testar as seguintes correlações fundamentadas na saúde pública:
 
-*   **Abastecimento de Água vs. Mortalidade Infantil:** Espera-se uma correlação negativa. Municípios com menor atendimento de água encanada tratada (`tx_atendimento_total_agua`) tendem a apresentar maior mortalidade infantil por conta da ingestão de água contaminada e da proliferação de doenças diarreicas agudas.
+*   **Abastecimento de Água vs. Mortalidade Infantil:** Espera-se uma correlação negativa. Municípios com menor atendimento de água encanada tratada (`tx_atendimento_agua`) tendem a apresentar maior mortalidade infantil por conta da ingestão de água contaminada e da proliferação de doenças diarreicas agudas.
 *   **Esgotamento Sanitário vs. Mortalidade Infantil:** A ausência de redes de coleta (`tx_coleta_esgoto`) expõe a população infantil ao esgoto a céu aberto, aumentando os casos de infecções parasitárias e gastroenterites. O grupo deve investigar se o esgotamento é um gargalo de saúde pública mais acentuado na Bahia do que o abastecimento de água.
-*   **Coleta de Lixo vs. Mortalidade Infantil:** O acúmulo inadequado de resíduos sólidos propicia a proliferação de vetores de doenças (roedores e insetos). Espera-se que municípios com baixas taxas de coleta de lixo (`tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total`) tenham piores índices de saúde básica infantil.
+*   **Coleta de Lixo vs. Mortalidade Infantil:** O acúmulo inadequado de resíduos sólidos propicia a proliferação de vetores de doenças (roedores e insetos). Espera-se que municípios com baixas taxas de coleta de lixo (`tx_coleta_lixo_pop_total`) tenham piores índices de saúde básica infantil.
 *   **Índice de Qualidade da Água vs. Mortalidade:** Verificar se desvios na conformidade biológica da água tratada (`idx_conformidade_coliformes`) têm impacto direto na taxa de óbitos de crianças por infecções intestinais.
 
 ---
@@ -54,9 +54,9 @@ A equipe de EDA deve testar as seguintes correlações fundamentadas na saúde p
 
 *   **Estabilidade Estatística (Recorte de 5 Anos):** A taxa de mortalidade municipal foi calculada agregando os nascimentos e óbitos de **2018 a 2022**. Cidades pequenas possuem poucas ocorrências por ano, o que faria um óbito pontual distorcer a taxa anual. A agregação de 5 anos estabiliza o indicador e reflete melhor a realidade de longo prazo de cada município no momento do censo de 2022.
 *   **Desigualdade Regional (Macrorregiões de Saúde):** A Bahia apresenta realidades socioeconômicas muito distintas entre o Recôncavo, o Sertão e o Extremo Sul. Recomendamos cruzar e agrupar as taxas por `macrorregiao_saude` para identificar gargalos geográficos onde os investimentos em infraestrutura sanitária são mais urgentes.
-*   **Tipos de Prestadores de Serviço:** O grupo pode analisar o impacto do modelo de gestão de água e esgoto agrupando os dados por `no_prestador_servico_ae`. É possível comparar o desempenho de municípios atendidos pela estatal estadual **EMBASA** com aqueles geridos por SAAEs municipais autônomos ou prestadores privados em termos de taxas de atendimento e reflexo na mortalidade.
-*   **Tratamento de Dados Ausentes (Nulos e Valores Sentinela):** O dataset final municipal foi tratado no ETL para ter **zero valores nulos (NaN)**. O grupo deve estar ciente de que:
-    *   **Colunas Deletadas:** 15 colunas operacionais que estavam 100% nulas na Bahia foram removidas (otimizando a base de 79 para 60 colunas).
-    *   **Valores Sentinela (`-1` ou `'Não Informado'`):** Colunas muito esparsas (mais de 75% de nulos) foram preenchidas com `-1` (se numéricas) ou `'Não Informado'` (se texto) para preservar as variáveis na base sem distorcer distribuições.
-    *   **Imputação por Faixa Populacional:** Colunas operacionais com nulos parciais moderados (15% a 75%) tiveram seus valores ausentes preenchidos com a **mediana da respectiva Faixa Populacional** do município, mantendo a consistência do porte demográfico das cidades.
+*   **Tipos de Prestadores de Serviço:** O grupo pode analisar o impacto do modelo de gestão de água e esgoto agrupando os dados por `prestador_servico_ae`. É possível comparar o desempenho de municípios atendidos pela estatal estadual **EMBASA** com aqueles geridos por SAAEs municipais autônomos ou prestadores privados em termos de taxas de atendimento e reflexo na mortalidade.
+*   **Tratamento de Dados Ausentes (Nulos e Imputação):** O dataset final municipal foi tratado no ETL para ter **zero valores nulos (NaN)**. O grupo deve estar ciente de que:
+    *   **Colunas Deletadas:** 15 colunas operacionais que estavam 100% nulas na Bahia foram removidas (otimizando a base de 79 para 59 colunas).
+    *   **Imputação por Faixa Populacional:** Colunas operacionais com nulos tiveram seus valores ausentes preenchidos com a **mediana da respectiva Faixa Populacional** do município.
+    *   **Fallback por Mediana Estadual:** Caso o grupo populacional inteiro não possua dados, utilizou-se a mediana estadual para garantir o preenchimento, e qualquer caso residual seria mantido como `NaN` (vazio real) para evitar distorções matemáticas de valores sentinela (como `-1`).
 

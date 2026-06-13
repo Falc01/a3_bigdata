@@ -95,6 +95,7 @@ Todas as alterações estruturais nas tabelas foram justificadas matematicamente
 | `base_snis_geografia.csv` | `uf_x`, `uf_y` | Removidas por redundância. A sigla de UF é mantida unicamente na coluna padronizada `sg_uf`. |
 | `base_snis_geografia.csv` | `codigo_do_ibge`, `codigo_do_municipio` | Removidas por redundância. O código identificador numérico oficial de 6 ou 7 dígitos do IBGE é unificado em `co_municipio`. |
 | `base_snis_geografia.csv` | `municipio` | Removida para evitar inconsistências gráficas de acentuação. Mantém-se o nome oficial limpo obtido do DATASUS na coluna `no_municipio`. |
+| `base_consolidada_municipal_2022.csv` | `ano_de_referencia` | Removida por ser 100% duplicada com a coluna `ano`. |
 
 ---
 
@@ -114,15 +115,18 @@ Para garantir a robustez e impedir falhas de execução em diferentes sistemas o
 4.  **Correção do Layout SIM (Classes vs. Total):**
     *   *O que foi feito:* Caso o download do TabNet do SIM traga colunas separadas por outras classes, o script detecta e utiliza apenas a coluna `'Total'` para a taxa municipal de óbitos infantis.
     *   *Justificativa:* Impede a atribuição errônea dos óbitos de uma única cidade (como Alagoinhas) a todos os outros municípios da planilha.
-5.  **Tratamento de Nulos Avançado na Base Municipal:**
+5.  **Tratamento de Nulos Avançado na Base Municipal (Sem Sentinelas):**
     *   *O que foi feito:*
-        *   **Exclusão (Drop):** Remoção de 15 colunas operacionais que vieram 100% nulas na Bahia.
-        *   **Imputação por Faixa Populacional:** Para variáveis numéricas com nulos parciais moderados (15% a 75%), aplicou-se a mediana do grupo da mesma Faixa Populacional do município. Se todo o grupo for nulo, usa-se a mediana estadual como primeiro fallback.
-        *   **Valor Sentinela (-1 / 'Não Informado'):** Para variáveis com nulos muito severos (acima de 75%), preencheu-se com o valor sentinela `-1` (numérico) ou `'Não Informado'` (texto) para preservar a presença da coluna para o EDA sem distorcer cálculos estatísticos.
-    *   *Justificativa:* Garante a integridade matemática da base Gold (zero NaNs na base municipal final), utilizando preenchimentos estatísticos contextualizados que respeitam o porte demográfico de cada município.
-6.  **Eliminação de Redundâncias de Memória (Feature Selection):**
-    *   *O que foi feito:* Drope das colunas repetitivas `co_regiao_pais`, `regiao_pais`, `nome_da_regiao` e `sigla_da_regiao` nas bases municipais de Gold.
-    *   *Justificativa:* Reduz o tamanho e a dimensionalidade das tabelas, removendo informações redundantes que já estão implícitas por estarmos analisando estritamente a Bahia.
+        *   **Exclusão (Drop):** Remoção de 15 colunas operacionais que vieram 100% nulas na Bahia (otimizando a base de 79 para 59 colunas).
+        *   **Imputação Hierárquica por Mediana:** Aplicação de imputação pela mediana da **Faixa Populacional** do município. Caso todo o grupo populacional seja nulo, a mediana estadual é usada como fallback. 
+        *   **Nulos Reais (NaN):** Remoção definitiva de valores sentinela artificiais como `-1` ou `'Não Informado'` para variáveis numéricas e de texto. Qualquer registro que resista à imputação hierárquica é mantido como `NaN` (vazio real do Pandas).
+    *   *Justificativa:* Evita a distorção de cálculos estatísticos de médias e correlações (`.mean()` e `.corr()`) no Python, permitindo que o Pandas ignore valores vazios nativamente.
+6.  **Simplificação e Eliminação de Redundâncias (Feature Selection):**
+    *   *O que foi feito:*
+        *   Drope das colunas geográficas redundantes `co_regiao_pais`, `regiao_pais`, `nome_da_regiao` e `sigla_da_regiao`.
+        *   Drope da coluna duplicada `ano_de_referencia` (mantendo apenas `ano`).
+        *   Renomeação em lote de mais de 30 colunas longas do SNIS para nomes concisos e limpos em *snake_case* (ex: de `tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total` para `tx_coleta_lixo_pop_total`).
+    *   *Justificativa:* Reduz o tamanho da base, remove informações redundantes e facilita a escrita de códigos de plotagem de gráficos e o mapeamento de variáveis no Dashboard.
 
 ---
 

@@ -56,13 +56,57 @@ def consolidar_municipal():
     # Dropar colunas redundantes para otimização de memória
     cols_to_drop = [
         'co_regiao_pais', 'regiao_pais', 'nome_da_regiao', 'sigla_da_regiao',
-        'uf_x', 'uf_y', 'codigo_do_ibge', 'codigo_do_municipio', 'municipio'
+        'uf_x', 'uf_y', 'codigo_do_ibge', 'codigo_do_municipio', 'municipio',
+        'ano_de_referencia'  # Dropar ano_de_referencia para evitar duplicação com a coluna 'ano'
     ]
     df_consolidada = df_consolidada.drop(columns=[c for c in cols_to_drop if c in df_consolidada.columns], errors='ignore')
     
-    # Tratamento de Nulos Avançado na base municipal
+    # Dicionário de renomeação para simplificar nomes de colunas extensas do SNIS
+    renomeacoes = {
+        'nome_do_orgao_responsavel_pela_gestao': 'orgao_gestor',
+        'sigla_do_orgao_responsavel_pela_gestao': 'sigla_orgao_gestor',
+        'natureza_juridica_do_orgao_municipal_responsavel': 'natureza_juridica_orgao',
+        'tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total': 'tx_coleta_lixo_pop_total',
+        'taxa_de_terceirizacao_da_coleta': 'tx_terceirizacao_coleta',
+        'produtividades_media_de_coletadores_e_motorista': 'produtividade_media_coleta',
+        'massa_rdo_coletada_per_capita_em_relacao_a_pop_total_atendida': 'massa_lixo_per_capita',
+        'custo_unitario_da_coleta': 'custo_unitario_coleta',
+        'incidencia_do_custo_da_coleta_no_custo_total_do_manejo': 'incid_custo_coleta_total',
+        'incidencia_de_emprega_da_coleta_no_total_de_empregados_no_manejo': 'incid_empregados_coleta',
+        'relacao_quantidade_rcd_coletada_pela_pref_p_quant_total_rdo_rpu': 'rel_rcd_rdo_rpu',
+        'relacao_quantidades_coletadas_de_rpu_por_rdo': 'rel_rpu_rdo',
+        'massa_rdo_rpu_coletada_per_capita_em_relacao_a_populacao_total_atendida': 'massa_rdo_rpu_per_capita',
+        'taxa_de_recuperacao_de_reciclaveis_em_relacao_a_quantidade_de_rdo_e_rpu': 'tx_recuperacao_reciclaveis',
+        'relacao_entre_quantidades_da_coleta_seletiva_e_rdo': 'rel_coleta_seletiva_rdo',
+        'incid_de_papel_papelao_sobre_total_mat_recuperado': 'incid_papel_recuperado',
+        'incid_de_plasticos_sobre_total_material_recuperado': 'incid_plastico_recuperado',
+        'incid_de_metais_sobre_total_material_recuperado': 'incid_metal_recuperado',
+        'incid_de_vidros_sobre_total_de_material_recuperado': 'incid_vidro_recuperado',
+        'incidencia_de_outros_sobre_total_material_recuperado': 'incid_outros_recuperado',
+        'taxa_de_rss_sobre_rdo_rpu': 'tx_rss_rdo_rpu',
+        'taxa_de_terceirizacao_de_varredores': 'tx_terceirizacao_varredores',
+        'taxa_de_terceirizacao_de_varricao': 'tx_terceirizacao_varricao',
+        'custo_unitario_da_varricao': 'custo_unitario_varricao',
+        'produtividade_media_do_varredores': 'produtividade_media_varredores',
+        'incidencia_do_custo_da_varricao_no_custo_total_do_manejo': 'incid_custo_varricao_total',
+        'incidencia_de_varredores_no_total_de_empregados_no_manejo': 'incid_varredores_total',
+        'relacao_de_capinadores_no_total_de_empregados_no_manejo': 'incid_capinadores_total',
+        'incidencia_de_despesas_com_rsu_na_prefeitura': 'incid_despesa_rsu_prefeitura',
+        'incidencia_de_despesas_com_empresas_contratadas': 'incid_despesa_contratadas',
+        'incidencia_de_empregados_proprios': 'incid_empregados_proprios',
+        'incidencia_de_empreg_de_empr_contrat_no_total_de_empreg_no_manejo': 'incid_empregados_contratados',
+        'incidencia_de_empreg_admin_no_total_de_empreg_no_manejo': 'incid_empregados_admin',
+        'tx_atendimento_total_agua': 'tx_atendimento_agua',
+        'tx_atendimento_urbano_agua': 'tx_atendimento_urbano_agua',
+        'tx_atendimento_urbano_esgoto': 'tx_atendimento_urbano_esgoto',
+        'tx_coleta_esgoto': 'tx_coleta_esgoto',
+        'tx_tratamento_esgoto': 'tx_tratamento_esgoto',
+        'no_prestador_servico_ae': 'prestador_servico_ae'
+    }
+    df_consolidada = df_consolidada.rename(columns=renomeacoes)
+    
+    # Tratamento de Nulos Avançado na base municipal (sem valores sentinelas)
     colunas_numericas = df_consolidada.select_dtypes(include=['number']).columns.tolist()
-    colunas_texto = df_consolidada.select_dtypes(exclude=['number']).columns.tolist()
     
     # Excluir chaves críticas do loop para segurança
     chaves_seguranca = ['co_municipio', 'co_uf', 'ano']
@@ -82,12 +126,8 @@ def consolidar_municipal():
         if pct_nulos == 1.0:
             # Dropar colunas 100% nulas
             colunas_para_dropar.append(col)
-        elif pct_nulos >= 0.75:
-            # Sentinel value para colunas muito esparsas
-            df_consolidada[col] = df_consolidada[col].fillna(-1)
         else:
-            # Imputação hierárquica por Faixa Populacional -> Estado -> Sentinel
-            # Calcular medianas por grupo
+            # Imputação hierárquica por Faixa Populacional -> Estado -> NaN (Vazio real do Pandas)
             if 'identificacao_da_faixa_populacional' in df_consolidada.columns:
                 medianas_grupo = df_consolidada.groupby('identificacao_da_faixa_populacional')[col].transform('median')
             else:
@@ -95,24 +135,18 @@ def consolidar_municipal():
                 
             mediana_estado = df_consolidada[col].median()
             
-            # Se a mediana do estado for nula, o fallback final é -1
-            fallback_val = mediana_estado if not pd.isna(mediana_estado) else -1
-            
             # Preencher com a mediana do grupo
             df_consolidada[col] = df_consolidada[col].fillna(medianas_grupo)
-            # Preencher o restante (se houver) com a mediana do estado/sentinel
-            df_consolidada[col] = df_consolidada[col].fillna(fallback_val)
+            # Preencher o restante (se houver) com a mediana do estado
+            if not pd.isna(mediana_estado):
+                df_consolidada[col] = df_consolidada[col].fillna(mediana_estado)
+            # Os nulos que ainda restarem permanecerão como NaN (vazio real)
             
     # Dropar as colunas de fato
     if colunas_para_dropar:
         print(f"  [CLEAN] Dropando {len(colunas_para_dropar)} colunas com 100% de nulos na base municipal.")
         df_consolidada = df_consolidada.drop(columns=colunas_para_dropar)
         
-    # Tratar colunas de texto com sentinela
-    for col in colunas_texto:
-        if df_consolidada[col].isnull().sum() > 0:
-            df_consolidada[col] = df_consolidada[col].fillna('Não Informado')
-            
     # Salvar base consolidada municipal
     df_consolidada.to_csv(output_file, index=False)
     print(f"[OK] Base consolidada municipal gerada com sucesso: {output_file.name}")
