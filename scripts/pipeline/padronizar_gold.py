@@ -23,7 +23,10 @@ if p_snis.exists():
     df_snis = pd.read_csv(p_snis)
 
     # Drops
-    cols_to_drop = ['uf_x', 'uf_y', 'codigo_do_ibge', 'codigo_do_municipio', 'municipio']
+    cols_to_drop = [
+        'uf_x', 'uf_y', 'codigo_do_ibge', 'codigo_do_municipio', 'municipio',
+        'co_regiao_pais', 'regiao_pais', 'nome_da_regiao', 'sigla_da_regiao'
+    ]
     df_snis = df_snis.drop(columns=[c for c in cols_to_drop if c in df_snis.columns])
 
     # Renames & Encoding fixes

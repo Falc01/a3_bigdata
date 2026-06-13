@@ -114,6 +114,15 @@ Para garantir a robustez e impedir falhas de execução em diferentes sistemas o
 4.  **Correção do Layout SIM (Classes vs. Total):**
     *   *O que foi feito:* Caso o download do TabNet do SIM traga colunas separadas por outras classes, o script detecta e utiliza apenas a coluna `'Total'` para a taxa municipal de óbitos infantis.
     *   *Justificativa:* Impede a atribuição errônea dos óbitos de uma única cidade (como Alagoinhas) a todos os outros municípios da planilha.
+5.  **Tratamento de Nulos Avançado na Base Municipal:**
+    *   *O que foi feito:*
+        *   **Exclusão (Drop):** Remoção de 15 colunas operacionais que vieram 100% nulas na Bahia.
+        *   **Imputação por Faixa Populacional:** Para variáveis numéricas com nulos parciais moderados (15% a 75%), aplicou-se a mediana do grupo da mesma Faixa Populacional do município. Se todo o grupo for nulo, usa-se a mediana estadual como primeiro fallback.
+        *   **Valor Sentinela (-1 / 'Não Informado'):** Para variáveis com nulos muito severos (acima de 75%), preencheu-se com o valor sentinela `-1` (numérico) ou `'Não Informado'` (texto) para preservar a presença da coluna para o EDA sem distorcer cálculos estatísticos.
+    *   *Justificativa:* Garante a integridade matemática da base Gold (zero NaNs na base municipal final), utilizando preenchimentos estatísticos contextualizados que respeitam o porte demográfico de cada município.
+6.  **Eliminação de Redundâncias de Memória (Feature Selection):**
+    *   *O que foi feito:* Drope das colunas repetitivas `co_regiao_pais`, `regiao_pais`, `nome_da_regiao` e `sigla_da_regiao` nas bases municipais de Gold.
+    *   *Justificativa:* Reduz o tamanho e a dimensionalidade das tabelas, removendo informações redundantes que já estão implícitas por estarmos analisando estritamente a Bahia.
 
 ---
 

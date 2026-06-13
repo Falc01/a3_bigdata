@@ -53,6 +53,66 @@ def consolidar_municipal():
             
         df_consolidada = pd.merge(df_consolidada, df_ae, on=['co_municipio', 'co_uf', 'sg_uf'], how='left')
         
+    # Dropar colunas redundantes para otimização de memória
+    cols_to_drop = [
+        'co_regiao_pais', 'regiao_pais', 'nome_da_regiao', 'sigla_da_regiao',
+        'uf_x', 'uf_y', 'codigo_do_ibge', 'codigo_do_municipio', 'municipio'
+    ]
+    df_consolidada = df_consolidada.drop(columns=[c for c in cols_to_drop if c in df_consolidada.columns], errors='ignore')
+    
+    # Tratamento de Nulos Avançado na base municipal
+    colunas_numericas = df_consolidada.select_dtypes(include=['number']).columns.tolist()
+    colunas_texto = df_consolidada.select_dtypes(exclude=['number']).columns.tolist()
+    
+    # Excluir chaves críticas do loop para segurança
+    chaves_seguranca = ['co_municipio', 'co_uf', 'ano']
+    for c in chaves_seguranca:
+        if c in colunas_numericas:
+            colunas_numericas.remove(c)
+            
+    colunas_para_dropar = []
+    
+    for col in colunas_numericas:
+        nulos = df_consolidada[col].isnull().sum()
+        if nulos == 0:
+            continue
+            
+        pct_nulos = nulos / len(df_consolidada)
+        
+        if pct_nulos == 1.0:
+            # Dropar colunas 100% nulas
+            colunas_para_dropar.append(col)
+        elif pct_nulos >= 0.75:
+            # Sentinel value para colunas muito esparsas
+            df_consolidada[col] = df_consolidada[col].fillna(-1)
+        else:
+            # Imputação hierárquica por Faixa Populacional -> Estado -> Sentinel
+            # Calcular medianas por grupo
+            if 'identificacao_da_faixa_populacional' in df_consolidada.columns:
+                medianas_grupo = df_consolidada.groupby('identificacao_da_faixa_populacional')[col].transform('median')
+            else:
+                medianas_grupo = pd.Series([pd.NA] * len(df_consolidada))
+                
+            mediana_estado = df_consolidada[col].median()
+            
+            # Se a mediana do estado for nula, o fallback final é -1
+            fallback_val = mediana_estado if not pd.isna(mediana_estado) else -1
+            
+            # Preencher com a mediana do grupo
+            df_consolidada[col] = df_consolidada[col].fillna(medianas_grupo)
+            # Preencher o restante (se houver) com a mediana do estado/sentinel
+            df_consolidada[col] = df_consolidada[col].fillna(fallback_val)
+            
+    # Dropar as colunas de fato
+    if colunas_para_dropar:
+        print(f"  [CLEAN] Dropando {len(colunas_para_dropar)} colunas com 100% de nulos na base municipal.")
+        df_consolidada = df_consolidada.drop(columns=colunas_para_dropar)
+        
+    # Tratar colunas de texto com sentinela
+    for col in colunas_texto:
+        if df_consolidada[col].isnull().sum() > 0:
+            df_consolidada[col] = df_consolidada[col].fillna('Não Informado')
+            
     # Salvar base consolidada municipal
     df_consolidada.to_csv(output_file, index=False)
     print(f"[OK] Base consolidada municipal gerada com sucesso: {output_file.name}")
