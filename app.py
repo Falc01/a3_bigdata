@@ -93,7 +93,7 @@ st.sidebar.caption("* Pedro Adaime Ribeiro")
 # ==============================================================================
 if menu == "🏠 Início & Resumo Executivo":
     st.markdown('<h1 class="main-title">Impacto do Saneamento na Mortalidade Infantil</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-title">Série Histórica Estadual (2016-2023) e Análise Transversal Municipal (2022)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-title">Série Histórica Estadual (2018-2023) e Análise Transversal Municipal (2022)</p>', unsafe_allow_html=True)
     
     st.markdown(
         """
@@ -153,7 +153,7 @@ if menu == "🏠 Início & Resumo Executivo":
         em crianças menores de 1 ano) no estado da Bahia. 
         
         A análise compreende duas abordagens estatísticas complementares:
-        1. **Abordagem Macro-Temporal (Bahia):** Estudo da evolução das taxas estaduais agregadas ao longo da série histórica 2016-2023, 
+        1. **Abordagem Macro-Temporal (Bahia):** Estudo da evolução das taxas estaduais agregadas ao longo da série histórica 2018-2023, 
         revelando fortes tendências de redução de mortalidade decorrentes do avanço sistêmico da infraestrutura.
         2. **Abordagem Transversal Municipal (2022):** Análise detalhada dos 332 municípios consolidados da Bahia no ano do Censo 2022, 
         identificando distorções de subnotificação e revelando a real eficácia das redes de saneamento básico após o agrupamento correto em faixas.
@@ -323,7 +323,7 @@ elif menu == "💡 Storytelling & Paradoxo":
         """
     )
     
-    st.markdown("### 1. O Cenário Macro-Temporal da Bahia (2016-2023)")
+    st.markdown("### 1. O Cenário Macro-Temporal da Bahia (2018-2023)")
     st.write(
         """
         Ao longo do tempo, o avanço da infraestrutura do estado da Bahia está associado a uma queda constante 

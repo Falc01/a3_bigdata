@@ -15,8 +15,7 @@
 !/dashboard/
 !/requirements.txt
 
-# 3. Forçar exclusão do relatório acadêmico para mantê-lo apenas local
-/docs/relatorio_final_consolidado_a3.md
+# 3. Permitir rastreamento do relatório final de A3
 
 # 3. Dentro da pasta data, ignorar tudo por padrão
 /data/*
