@@ -18,8 +18,7 @@ Abaixo está a divisão de tarefas baseada nas fases de entrega do projeto:
     *   Processamento e cruzamento de bases municipais via código IBGE, gerando as tabelas finais na camada Gold.
 *   **Bibliotecas Utilizadas:** `pandas`, `numpy`, `pathlib`.
 *   **Responsáveis:**
-    *   👤 *Spinola*
-    *   👤 *Adaime*
+    *   👤 ***João Spinola Falcão***
 
 ---
 
@@ -31,8 +30,9 @@ Abaixo está a divisão de tarefas baseada nas fases de entrega do projeto:
     *   Identificação de padrões, tendências históricas e matriz de correlação de Pearson.
 *   **Bibliotecas Utilizadas:** `matplotlib`, `seaborn`, `pandas`, `numpy`.
 *   **Responsáveis:**
-    *   **👤 *Daniel***
-    *   **👤 *Perrone***
+    *   **👤 ***Daniel***
+    *   **👤 ***Perrone***
+    *   **👤 ***Pedro Adaime Ribeiro***
 
 ---
 
@@ -45,7 +45,7 @@ Abaixo está a divisão de tarefas baseada nas fases de entrega do projeto:
     *   Criação da ferramenta interativa de busca no dicionário de dados.
 *   **Bibliotecas Utilizadas:** `streamlit`, `matplotlib`, `seaborn`
 *   **Responsáveis:**
-    *   👤 *Aurea*
+    *   👤 ***Aurea***
 
 ---
 
@@ -56,4 +56,4 @@ Abaixo está a divisão de tarefas baseada nas fases de entrega do projeto:
     *   Redação das diretrizes éticas de conformidade com a LGPD (anonimização) e LAI.
     *   Formulação de recomendações de políticas públicas e roteiros de apresentação.
 *   **Responsáveis:**
-    *   👤 *Kawan*
+    *   👤 ***Kawan***
