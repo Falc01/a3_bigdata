@@ -13,6 +13,7 @@
 !/CHECKLIST_A3_Análise_de_Dados.html
 !/app.py
 !/dashboard/
+!/requirements.txt
 
 # 3. Forçar exclusão do relatório acadêmico para mantê-lo apenas local
 /docs/relatorio_final_consolidado_a3.md
