@@ -11,6 +11,11 @@
 !/eda_bahia_2022.ipynb
 !/Enunciado_Avaliação_A3_Análise_de_Dados_e_Big_Data.pdf
 !/CHECKLIST_A3_Análise_de_Dados.html
+!/app.py
+!/dashboard/
+
+# 3. Forçar exclusão do relatório acadêmico para mantê-lo apenas local
+/docs/relatorio_final_consolidado_a3.md
 
 # 3. Dentro da pasta data, ignorar tudo por padrão
 /data/*
