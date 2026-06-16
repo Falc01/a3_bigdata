@@ -30,9 +30,9 @@ Abaixo está a divisão de tarefas baseada nas fases de entrega do projeto:
     *   Identificação de padrões, tendências históricas e matriz de correlação de Pearson.
 *   **Bibliotecas Utilizadas:** `matplotlib`, `seaborn`, `pandas`, `numpy`.
 *   **Responsáveis:**
-    *   **👤 ***Daniel***
-    *   **👤 ***Perrone***
-    *   **👤 ***Pedro Adaime Ribeiro***
+    *   👤 ***Daniel***
+    *   👤 ***Perrone***
+    *   👤 ***Pedro Adaime Ribeiro***
 
 ---
 
