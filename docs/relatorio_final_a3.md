@@ -66,13 +66,25 @@ Este documento apresenta o relatório final integrado das fases de Engenharia de
 O pipeline foi construído de forma modular respeitando a arquitetura de medalhão (Landing $\rightarrow$ Bronze $\rightarrow$ Silver $\rightarrow$ Gold), com foco na consistência de tipos, integridade de junções de dados e tratamento estatístico avançado de nulos.
 
 ### A. Inventário de Dados e Fontes Utilizadas (Entradas e Saídas)
-O pipeline consome **7 fontes governamentais brutas** na camada `landing/`:
-1.  **DATASUS (SIM):** Total acumulado de óbitos infantis por residência na Bahia (Série Estabilizada 2018-2022).
-2.  **DATASUS (SINASC):** Total acumulado de nascidos vivos por residência da mãe na Bahia (2018-2022).
-3.  **SNIS (Resíduos Sólidos):** Planilhas municipais de coleta de lixo do ano de 2022.
-4.  **SNIS (Água e Esgoto):** Dados locais e regionais de abastecimento, esgotamento e conformidade de água de 2022.
-5.  **Históricos Estaduais (SNIS):** Indicadores históricos de déficit de saneamento estaduais.
-6.  **Série Histórica Nacional (MS):** Mortalidade de crianças menores de 1 ano do Ministério da Saúde para todas as UFs.
+
+O pipeline lê **7 arquivos brutos** de origens governamentais na camada `data/landing/`, além de um arquivo suplementar de dados históricos:
+
+| Nome do Arquivo / Pasta | Portal de Origem | Período | Descrição Técnica e Finalidade |
+| :--- | :--- | :--- | :--- |
+| `sim_cnv_inf10ba131422187_107_8_217.csv` | **DATASUS / SIM** (Min. Saúde) | 2018-2022 | Óbitos infantis acumulados (< 1 ano) por residência no estado da Bahia. Fornece o numerador epidemiológico da taxa. |
+| `sinasc_cnv_nvba131418187_107_8_217.csv` | **DATASUS / SINASC** (Min. Saúde) | 2018-2022 | Total de nascidos vivos por residência da mãe no estado da Bahia. Fornece o denominador estatístico oficial. |
+| `Planilha_RS_2022_atualizado_29112024.zip` | **SNIS / MDR** (Resíduos Sólidos) | 2022 | Indicadores operacionais locais e regionais sobre a cobertura de coleta e destinação final de lixo doméstico. |
+| `DIAGNOSTICO_TEMATICO_VISAO_GERAL_AE_SNIS_2023_ATUALIZADO.zip` | **SNIS / MDR** (Água e Esgoto) | 2022 | Planilhas operacionais contendo cobertura de abastecimento de água potável, coleta e esgotamento sanitário por prestador de serviço. |
+| `proporcao_agua.csv` | **SNIS** (Série Histórica) | 2018-2023 | Histórico anual estadual consolidado do indicador de déficit de cobertura de água para todas as UFs brasileiras. |
+| `proporcao_lixo.csv` | **SNIS** (Série Histórica) | 2018-2023 | Histórico anual estadual consolidado do indicador de déficit de cobertura de coleta de lixo para todas as UFs. |
+| `proporcao_sanitaria.csv` | **SNIS** (Série Histórica) | 2018-2023 | Histórico anual estadual consolidado do indicador de déficit de cobertura de esgotamento sanitário por rede pública. |
+| `mgdi_ms_k5p.csv` * | **Ministério da Saúde** | 2000-2023 | Série histórica suplementar de apoio contendo a taxa estadual oficial de mortalidade de menores de 1 ano do MS. |
+
+*\* Nota: O arquivo `mgdi_ms_k5p.csv` é armazenado na pasta de conjuntos de dados originais como apoio para cruzar a série histórica de longo prazo.*
+
+#### Origem e Métodos de Coleta das Fontes
+*   **DATASUS (TabNet):** As bases de óbitos (SIM) e de nascidos vivos (SINASC) foram extraídas por meio da ferramenta de tabulação pública TabNet do Ministério da Saúde. Selecionou-se a unidade geográfica da Bahia, segmentada de forma agregada por município de residência para o período de 5 anos (2018-2022) para suavizar variações pontuais e flutuações sazonais em pequenos municípios.
+*   **SNIS (Dados Abertos):** O Sistema Nacional de Informações sobre Saneamento (coordenado pelo Ministério das Cidades / Ministério do Desenvolvimento Regional) disponibiliza anualmente planilhas de diagnóstico consolidadas de prestadores públicos e privados. Os arquivos compactados contêm planilhas ricas em colunas operacionais referentes ao ano-base de 2022.
 
 Como resultado, o pipeline gera **8 tabelas estruturadas na camada Gold** (`data/gold/`), organizadas de forma modular em duas categorias fundamentais:
 

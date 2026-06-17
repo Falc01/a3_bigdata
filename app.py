@@ -193,7 +193,98 @@ elif menu == "⚙️ Pipeline ETL & Qualidade":
         st.caption("Cruzamentos municipais pelo código IBGE, cálculo da TMI de 5 anos, imputações hierárquicas populacionais e remoção definitiva de sentinelas (-1).")
         
     st.markdown("---")
-    st.subheader("2. Dicionário de Variáveis Principais (Gold)")
+    st.subheader("2. 🗃️ Inventário de Fontes de Dados (Landing)")
+    st.write(
+        """
+        Os arquivos brutos (camada **Landing**) são provenientes de plataformas públicas oficiais de saúde e saneamento. 
+        Estes dados são extraídos em formatos brutos e compactados antes de serem submetidos ao pipeline de processamento:
+        """
+    )
+    
+    # Criar DataFrame com as fontes de dados da camada landing
+    landing_data = {
+        "Arquivo / Diretório": [
+            "sim_cnv_inf10ba131422187_107_8_217.csv",
+            "sinasc_cnv_nvba131418187_107_8_217.csv",
+            "Planilha_RS_2022_atualizado_29112024.zip",
+            "DIAGNOSTICO_TEMATICO_VISAO_GERAL_AE_SNIS_2023_ATUALIZADO.zip",
+            "proporcao_agua.csv",
+            "proporcao_lixo.csv",
+            "proporcao_sanitaria.csv",
+            "mgdi_ms_k5p.csv *"
+        ],
+        "Origem": [
+            "DATASUS / SIM",
+            "DATASUS / SINASC",
+            "SNIS (Manejo de Resíduos Sólidos)",
+            "SNIS (Água e Esgoto)",
+            "SNIS (Série Histórica)",
+            "SNIS (Série Histórica)",
+            "SNIS (Série Histórica)",
+            "Ministério da Saúde"
+        ],
+        "Período": [
+            "2018 - 2022",
+            "2018 - 2022",
+            "2022",
+            "2022",
+            "2018 - 2023",
+            "2018 - 2023",
+            "2018 - 2023",
+            "2000 - 2023"
+        ],
+        "Descrição Básica": [
+            "Óbitos infantis acumulados (< 1 ano) por município de residência (BA).",
+            "Nascidos vivos acumulados por município de residência da mãe (BA).",
+            "Dados de saneamento de resíduos sólidos (coleta e manejo de lixo).",
+            "Informações de prestadores sobre abastecimento de água e coleta de esgoto.",
+            "Histórico estadual de déficit de abastecimento de água tratada.",
+            "Histórico estadual de déficit de coleta de resíduos sólidos (lixo).",
+            "Histórico estadual de déficit de esgotamento sanitário por rede pública.",
+            "Série de mortalidade infantil estadual geral para todas as UFs."
+        ]
+    }
+    df_landing = pd.DataFrame(landing_data)
+    st.dataframe(df_landing, use_container_width=True)
+    st.caption("* Nota: O arquivo `mgdi_ms_k5p.csv` é um conjunto de dados suplementar de apoio para a série histórica estadual.")
+
+    st.markdown("##### 🔍 Detalhamento das Fontes e Métodos de Extração")
+    st.write(
+        """
+        Para entender a confiabilidade e o contexto de obtenção de cada registro, clique para expandir as seções abaixo:
+        """
+    )
+    
+    with st.expander("🩺 Sistema de Informações de Saúde (SIM & SINASC / DATASUS)"):
+        st.write(
+            """
+            * **Origem Governamental:** Ministério da Saúde / Departamento de Informática do SUS (DATASUS).
+            * **SIM (Sistema de Informações sobre Mortalidade):** Criado para registrar os dados de óbitos no país, baseia-se nas Declarações de Óbito (DO) preenchidas por médicos. Ele fornece estatísticas cruciais para a análise de causas de morte evitáveis na infância.
+            * **SINASC (Sistema de Informações sobre Nascidos Vivos):** Reúne dados de nascimentos com base nas Declarações de Nascido Vivo (DNV) preenchidas em maternidades de todo o Brasil.
+            * **Como foi extraído:** As bases de saúde da Bahia foram baixadas via portal **TabNet (DATASUS)**, selecionando os dados consolidados agregados por município de residência de 2018 a 2022. O agrupamento de 5 anos é uma decisão epidemiológica para reduzir anomalias estatísticas de cidades muito pequenas.
+            """
+        )
+
+    with st.expander("🚰 Sistema Nacional de Informações sobre Saneamento (SNIS / MDR)"):
+        st.write(
+            """
+            * **Origem Governamental:** Ministério do Desenvolvimento Regional (MDR) / Ministério das Cidades.
+            * **SNIS Água e Esgoto (AE):** Coleta anualmente dados operacionais, financeiros, de qualidade e gerenciais de prestadores públicos e privados de serviços de água e esgoto no Brasil. Fornece indicadores como taxas de atendimento de água, taxas de coleta de esgoto e índices de perdas de distribuição.
+            * **SNIS Resíduos Sólidos (RS):** Focado na coleta e destinação final de resíduos sólidos domésticos e na limpeza urbana, fornecendo informações sobre a cobertura da população atendida com coleta regular de lixo.
+            * **Como foi extraído:** Os arquivos compactados (.zip) contendo as bases de dados brutas do SNIS para o ano-base de 2022 (publicados no final de 2023) foram obtidos diretamente do site oficial do SNIS na seção de dados abertos e diagnósticos anuais.
+            """
+        )
+        
+    with st.expander("📈 Séries Históricas Estaduais Consolidadas (SNIS & MS)"):
+        st.write(
+            """
+            * **Déficits de Saneamento (`proporcao_agua`, `proporcao_lixo`, `proporcao_sanitaria`):** São planilhas históricas contendo a evolução temporal anual do déficit (população não atendida) por estado de 2018 a 2023. O pipeline inverte esses indicadores para obter a taxa de cobertura real ($100 - \\text{déficit}$).
+            * **Série Geral de Mortalidade (`mgdi_ms_k5p.csv`):** Base histórica contendo a taxa de mortalidade infantil estadual oficial do Ministério da Saúde de 2000 a 2023. Permite correlacionar a evolução histórica de saneamento da Bahia com o panorama geral de saúde ao longo de mais de duas décadas.
+            """
+        )
+        
+    st.markdown("---")
+    st.subheader("3. Dicionário de Variáveis Principais (Gold)")
     st.write("Filtre e busque abaixo o significado e a tipagem das principais colunas consumidas pelas análises:")
     
     # Criar DataFrame do Dicionário de Dados
@@ -238,7 +329,7 @@ elif menu == "⚙️ Pipeline ETL & Qualidade":
         st.dataframe(df_dict, use_container_width=True)
         
     st.markdown("---")
-    st.subheader("3. 🛠️ Higienização e Engenharia de Recursos")
+    st.subheader("4. 🛠️ Higienização e Engenharia de Recursos")
     st.write(
         """
         Para garantir a integridade da análise estatística, o pipeline de ETL aplicou transformações 
@@ -273,7 +364,7 @@ elif menu == "⚙️ Pipeline ETL & Qualidade":
         )
         
     st.markdown("---")
-    st.subheader("4. Suite de Validação de Qualidade (Quality Gate)")
+    st.subheader("5. Suite de Validação de Qualidade (Quality Gate)")
     st.success("✅ **Suite `verificar_checklist.py` executada com sucesso!**")
     st.info(
         """
