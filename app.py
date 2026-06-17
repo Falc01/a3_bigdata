@@ -442,15 +442,19 @@ elif menu == "📊 Análise Exploratória (EDA)":
             agua_std = df_filtered['tx_atendimento_agua'].std()
             agua_amp = df_filtered['tx_atendimento_agua'].max() - df_filtered['tx_atendimento_agua'].min()
             
+            # Cálculo dos quartis (25% e 75%)
+            agua_q1 = df_filtered['tx_atendimento_agua'].quantile(0.25)
+            agua_q3 = df_filtered['tx_atendimento_agua'].quantile(0.75)
+            
             st.markdown(
                 f"""
                 <div class="stats-box">
-                    <div class="stats-header">💧 Estatísticas Descritivas (Cobertura de Água)</div>
-                    • <strong>Média:</strong> {agua_mean:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
-                    • <strong>Mediana:</strong> {agua_median:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
-                    • <strong>Moda:</strong> {agua_mode:.2f}%<br>
+                    <div class="stats-header">💧 Estatísticas & Quartis (Cobertura de Água)</div>
+                    • <strong>Média (Losango Vermelho ♦):</strong> {agua_mean:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Mediana (Q2 - 50%):</strong> {agua_median:.2f}%<br>
+                    • <strong>Quartil 1 (Q1 - 25%):</strong> {agua_q1:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Quartil 3 (Q3 - 75%):</strong> {agua_q3:.2f}%<br>
                     • <strong>Desvio Padrão:</strong> {agua_std:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
-                    • <strong>Variância:</strong> {agua_var:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
                     • <strong>Amplitude:</strong> {agua_amp:.2f}%
                 </div>
                 """,

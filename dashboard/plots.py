@@ -28,14 +28,21 @@ def plot_mortalidade_histogram(df):
     return fig
 
 def plot_agua_boxplot(df):
-    """Gera o boxplot de cobertura de atendimento de água."""
+    """Gera o boxplot de cobertura de atendimento de água com indicação visual de média."""
     fig, ax = plt.subplots(figsize=(8, 4.5))
     sns.boxplot(
         data=df, 
         y='tx_atendimento_agua', 
         ax=ax, 
         color='#3498db', # Azul água
-        width=0.4
+        width=0.4,
+        showmeans=True,
+        meanprops={
+            "marker": "D", 
+            "markerfacecolor": "#e74c3c", 
+            "markeredgecolor": "black", 
+            "markersize": 7
+        }
     )
     ax.set_title('Distribuição da Cobertura de Atendimento de Água', fontweight='bold', pad=12)
     ax.set_ylabel('Taxa de Atendimento de Água (%)')
