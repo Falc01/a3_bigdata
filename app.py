@@ -238,7 +238,42 @@ elif menu == "⚙️ Pipeline ETL & Qualidade":
         st.dataframe(df_dict, use_container_width=True)
         
     st.markdown("---")
-    st.subheader("3. Suite de Validação de Qualidade (Quality Gate)")
+    st.subheader("3. 🛠️ Higienização e Engenharia de Recursos")
+    st.write(
+        """
+        Para garantir a integridade da análise estatística, o pipeline de ETL aplicou transformações 
+        avançadas nas planilhas governamentais originais. Expanda as caixas abaixo para ver os detalhes técnicos:
+        """
+    )
+    
+    with st.expander("📁 Ajuste Dinâmico de Layouts (TabNet/SNIS)"):
+        st.write(
+            """
+            * **Filtro de Cabeçalho Explícito:** Os arquivos brutos continham de 3 a 8 linhas de texto explicativo antes da tabela real. O pipeline localiza dinamicamente a linha que inicia com 'Munic' ou 'Código do Município' para iniciar a carga.
+            * **Deduplicação de Arquivos:** O pipeline prioriza arquivos de planilha Excel (.xlsx) sobre arquivos de valores separados por vírgula (.csv) em caso de mesma origem, evitando duplicidade de dados brutos na camada Bronze.
+            * **Conversão de Separadores:** Caracteres vazios do TabNet (como o traço `-`) e vírgulas decimais foram limpos e padronizados para garantir a tipagem numérica correta dos campos.
+            """
+        )
+        
+    with st.expander("🔢 Tratamento de Nulos & Erradicação de Sentinelas (-1)"):
+        st.write(
+            """
+            * **Substituição de Sentinelas:** Valores como `-1` ou `'Não Informado'` foram erradicados e substituídos por nulos reais (`NaN`). Isso garante que funções matemáticas do Pandas (como `.mean()` ou `.corr()`) ignorem esses registros e não gerem correlações artificiais.
+            * **Imputação Hierárquica:** Municípios com dados parciais em branco receberam a **mediana da sua respectiva Faixa Populacional do IBGE** (Pequeno Porte, Médio Porte, etc.). 
+            * **Mediana do Estado:** Caso o grupo demográfico inteiro fosse nulo, aplicou-se a mediana estadual como fallback secundário.
+            """
+        )
+        
+    with st.expander("🔤 Padronização e Codificação (UTF-8)"):
+        st.write(
+            """
+            * **Codificação de Caracteres:** Arquivos originais do DATASUS foram convertidos do encoding `Latin-1` (típico do Windows) para `UTF-8` de forma robusta, prevenindo falhas de compilação em diferentes sistemas operacionais decorrentes de acentuações geográficas (ex: 'América Dourada').
+            * **Nomes em Snake_Case:** Colunas longas do SNIS (ex: `tx_cobertura_da_coleta_rdo_em_relacao_a_pop_total`) foram mapeadas e renomeadas em lote para nomes concisos e inteligíveis (ex: `tx_coleta_lixo_pop_total`), reduzindo a complexidade de desenvolvimento de código.
+            """
+        )
+        
+    st.markdown("---")
+    st.subheader("4. Suite de Validação de Qualidade (Quality Gate)")
     st.success("✅ **Suite `verificar_checklist.py` executada com sucesso!**")
     st.info(
         """
