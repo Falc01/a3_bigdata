@@ -99,6 +99,27 @@ def inject_custom_css():
     .kpi-green { border-top: 4px solid #2ecc71; }
     .kpi-red { border-top: 4px solid #e74c3c; }
     
+    /* Estilo de box de estatísticas descritivas */
+    .stats-box {
+        background-color: #fcfcfc;
+        border: 1px solid #eaeaea;
+        border-radius: 6px;
+        padding: 12px 15px;
+        margin-top: 10px;
+        font-size: 0.85rem;
+        color: #333;
+        line-height: 1.5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+    .stats-header {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #2c3e50;
+        margin-bottom: 6px;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 4px;
+    }
+    
     /* Estilo de rodapé profissional */
     .footer-text {
         text-align: center;

@@ -398,6 +398,30 @@ elif menu == "📊 Análise Exploratória (EDA)":
             st.pyplot(fig1)
             plt.close(fig1)
             st.caption("O histograma exibe uma distribuição com assimetria positiva, concentrada na faixa de 10 a 20 óbitos por 1.000 nascidos vivos.")
+            
+            # Estatísticas dinâmicas para a Mortalidade Infantil
+            tmi_mean = df_filtered['taxa_mortalidade_infantil'].mean()
+            tmi_median = df_filtered['taxa_mortalidade_infantil'].median()
+            tmi_mode_series = df_filtered['taxa_mortalidade_infantil'].mode()
+            tmi_mode = tmi_mode_series.iloc[0] if not tmi_mode_series.empty else 0.0
+            tmi_var = df_filtered['taxa_mortalidade_infantil'].var()
+            tmi_std = df_filtered['taxa_mortalidade_infantil'].std()
+            tmi_amp = df_filtered['taxa_mortalidade_infantil'].max() - df_filtered['taxa_mortalidade_infantil'].min()
+            
+            st.markdown(
+                f"""
+                <div class="stats-box">
+                    <div class="stats-header">📊 Estatísticas Descritivas (Mortalidade Infantil)</div>
+                    • <strong>Média:</strong> {tmi_mean:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Mediana:</strong> {tmi_median:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Moda:</strong> {tmi_mode:.2f}<br>
+                    • <strong>Desvio Padrão:</strong> {tmi_std:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Variância:</strong> {tmi_var:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Amplitude:</strong> {tmi_amp:.2f}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         else:
             st.warning("Sem dados disponíveis com os filtros selecionados.")
             
@@ -408,6 +432,30 @@ elif menu == "📊 Análise Exploratória (EDA)":
             st.pyplot(fig2)
             plt.close(fig2)
             st.caption("O box plot revela grande amplitude de atendimento, evidenciando municípios com níveis críticos de água potável (abaixo de 50%).")
+            
+            # Estatísticas dinâmicas para a Cobertura de Água
+            agua_mean = df_filtered['tx_atendimento_agua'].mean()
+            agua_median = df_filtered['tx_atendimento_agua'].median()
+            agua_mode_series = df_filtered['tx_atendimento_agua'].mode()
+            agua_mode = agua_mode_series.iloc[0] if not agua_mode_series.empty else 0.0
+            agua_var = df_filtered['tx_atendimento_agua'].var()
+            agua_std = df_filtered['tx_atendimento_agua'].std()
+            agua_amp = df_filtered['tx_atendimento_agua'].max() - df_filtered['tx_atendimento_agua'].min()
+            
+            st.markdown(
+                f"""
+                <div class="stats-box">
+                    <div class="stats-header">💧 Estatísticas Descritivas (Cobertura de Água)</div>
+                    • <strong>Média:</strong> {agua_mean:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Mediana:</strong> {agua_median:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Moda:</strong> {agua_mode:.2f}%<br>
+                    • <strong>Desvio Padrão:</strong> {agua_std:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Variância:</strong> {agua_var:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Amplitude:</strong> {agua_amp:.2f}%
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         else:
             st.warning("Sem dados disponíveis com os filtros selecionados.")
             
@@ -422,6 +470,30 @@ elif menu == "📊 Análise Exploratória (EDA)":
             st.pyplot(fig3)
             plt.close(fig3)
             st.caption("Gráfico de dispersão mostrando a densa nuvem de municípios com 0% de coleta de esgoto pública formal e a linha de regressão correspondente.")
+            
+            # Estatísticas dinâmicas para a Coleta de Esgoto
+            esgoto_mean = df_filtered['tx_coleta_esgoto'].mean()
+            esgoto_median = df_filtered['tx_coleta_esgoto'].median()
+            esgoto_mode_series = df_filtered['tx_coleta_esgoto'].mode()
+            esgoto_mode = esgoto_mode_series.iloc[0] if not esgoto_mode_series.empty else 0.0
+            esgoto_var = df_filtered['tx_coleta_esgoto'].var()
+            esgoto_std = df_filtered['tx_coleta_esgoto'].std()
+            esgoto_amp = df_filtered['tx_coleta_esgoto'].max() - df_filtered['tx_coleta_esgoto'].min()
+            
+            st.markdown(
+                f"""
+                <div class="stats-box">
+                    <div class="stats-header">🚽 Estatísticas Descritivas (Coleta de Esgoto)</div>
+                    • <strong>Média:</strong> {esgoto_mean:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Mediana:</strong> {esgoto_median:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Moda:</strong> {esgoto_mode:.2f}%<br>
+                    • <strong>Desvio Padrão:</strong> {esgoto_std:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Variância:</strong> {esgoto_var:.2f} &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Amplitude:</strong> {esgoto_amp:.2f}%
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         else:
             st.warning("Sem dados disponíveis com os filtros selecionados.")
             
@@ -432,6 +504,35 @@ elif menu == "📊 Análise Exploratória (EDA)":
             st.pyplot(fig4)
             plt.close(fig4)
             st.caption("A correlação de Pearson de 2022 município a município demonstra coeficientes lineares puros muito baixos (próximos a zero).")
+            
+            # Estatísticas dinâmicas para a Coleta de Lixo
+            lixo_mean = df_filtered['tx_coleta_lixo_pop_total'].mean()
+            lixo_median = df_filtered['tx_coleta_lixo_pop_total'].median()
+            lixo_mode_series = df_filtered['tx_coleta_lixo_pop_total'].mode()
+            lixo_mode = lixo_mode_series.iloc[0] if not lixo_mode_series.empty else 0.0
+            lixo_var = df_filtered['tx_coleta_lixo_pop_total'].var()
+            lixo_std = df_filtered['tx_coleta_lixo_pop_total'].std()
+            lixo_amp = df_filtered['tx_coleta_lixo_pop_total'].max() - df_filtered['tx_coleta_lixo_pop_total'].min()
+            
+            # Correlações dinâmicas com Mortalidade Infantil
+            corr_agua = df_filtered['taxa_mortalidade_infantil'].corr(df_filtered['tx_atendimento_agua'])
+            corr_esgoto = df_filtered['taxa_mortalidade_infantil'].corr(df_filtered['tx_coleta_esgoto'])
+            corr_lixo = df_filtered['taxa_mortalidade_infantil'].corr(df_filtered['tx_coleta_lixo_pop_total'])
+            
+            st.markdown(
+                f"""
+                <div class="stats-box">
+                    <div class="stats-header">🗑️ Coleta de Lixo & Correlações com a TMI</div>
+                    • <strong>Média Coleta de Lixo:</strong> {lixo_mean:.2f}% &nbsp;&nbsp;&nbsp;&nbsp;
+                    • <strong>Mediana:</strong> {lixo_median:.2f}%<br>
+                    • <strong>R de Pearson com a Mortalidade Infantil:</strong><br>
+                    &nbsp;&nbsp;- Cobertura de Água: <strong>{corr_agua:+.4f}</strong><br>
+                    &nbsp;&nbsp;- Coleta de Esgoto: <strong>{corr_esgoto:+.4f}</strong><br>
+                    &nbsp;&nbsp;- Coleta de Lixo: <strong>{corr_lixo:+.4f}</strong>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         else:
             st.warning("Sem dados disponíveis com os filtros selecionados.")
 
